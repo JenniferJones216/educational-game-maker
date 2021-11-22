@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "xxX2ttHK+To1VXYqnsvrtXpFRJ33rbxK34qshDT7g6nOyf2NskdjptkvR7c7rjaoEGwEqs2xl1Dyj4VCdk1ZbQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Student\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Student\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Student\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Student\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\Student\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\Student\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\Student\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
