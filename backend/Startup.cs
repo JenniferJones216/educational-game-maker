@@ -32,6 +32,8 @@ namespace EducationalGameMaker
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "EducationalGameMaker", Version = "v1" });
             });
+
+            services.AddDbContext<GameMakerDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
