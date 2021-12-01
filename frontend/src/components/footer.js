@@ -1,5 +1,4 @@
-import Artists from "../components/Artists";
-import * as CONSTANTS from "../components/constants";
+
 
 export default {
    SetupFooter,
