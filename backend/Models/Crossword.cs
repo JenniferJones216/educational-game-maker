@@ -8,7 +8,9 @@ namespace EducationalGameMaker.Models
     public class Crossword
     {
         public int Id { get; set; }
-        public string Title { get; set; }
-
+        
+        public int UserId { get; set; }
+        public string[] Clues { get; set; }
+        public string[] Phrases { get; set; }
     }
 }
