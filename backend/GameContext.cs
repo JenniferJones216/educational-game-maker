@@ -17,7 +17,10 @@ namespace EducationalGameMaker
         public DbSet<DragandDrop> DragandDrops { get; set; }
         public DbSet<DragandDropTask> DragandDropTasks { get; set; }
         public DbSet<CrosswordTask> CrosswordTasks { get; set; }
+       
         public IConfiguration Configuration;
+       
+        
         public GameContext(IConfiguration configuration)
         {
             Configuration = configuration;
