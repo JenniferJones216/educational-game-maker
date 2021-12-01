@@ -6,14 +6,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
-using Microsoft.Extensions.Options;
-
 
 namespace EducationalGameMaker
 {
@@ -25,25 +22,17 @@ namespace EducationalGameMaker
         }
 
         public IConfiguration Configuration { get; }
-     public void ConfigureServices(IServiceCollection services)
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
-            {
-                builder.AllowAnyOrigin()
-                       .AllowAnyMethod()
-                       .AllowAnyHeader();
-            }));
 
-
-
-
+            services.AddControllers();
+            services.AddDbContext<GameContext>();
             services.AddControllers().AddNewtonsoftJson(o =>
             {
                 o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });
-
-            services.AddDbContext<GameContext>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +42,7 @@ namespace EducationalGameMaker
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseCors("MyPolicy");
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -62,14 +51,8 @@ namespace EducationalGameMaker
 
             app.UseEndpoints(endpoints =>
             {
-
                 endpoints.MapControllers();
-         
             });
-
-
-
-
         }
     }
 }

@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 
 namespace EducationalGameMaker.Models
 {
-    public class Wordserch
+    public class DragandDrop
     {
-     public int Id { get; set; }
-
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Subheading { get; set; }
         public int UserId { get; set; }
-        public int Hight { get; set; }
-        public int Width { get; set; }
-        public string Matrix { get; set; }
-        public string Keywords { get; set; }
+        public virtual List<DragandDropTask> DragandDropTasks { get; set; }
         public virtual User User { get; set; }
+
+
 
     }
 }

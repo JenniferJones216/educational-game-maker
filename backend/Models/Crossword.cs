@@ -10,7 +10,8 @@ namespace EducationalGameMaker.Models
         public int Id { get; set; }
         
         public int UserId { get; set; }
-        public string[] Clues { get; set; }
-        public string[] Phrases { get; set; }
+        public virtual List<CrosswordTask> CrosswordTasks { get; set; }
+        public virtual User User { get; set; }
+
     }
 }
