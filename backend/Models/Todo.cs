@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace EducationalGameMaker.Models
 {
-    public class Task1
+    public class Todo
     {
         public int Id { get; set; }
 

@@ -12,27 +12,27 @@ namespace EducationalGameMaker.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class WordserchController : ControllerBase
+    public class WordsearchController : ControllerBase
     {
         private readonly GameContext _context;
 
-        public WordserchController(GameContext context)
+        public WordsearchController(GameContext context)
         {
             _context = context;
         }
 
         // GET: api/Wordserches
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Wordserch>>> Get()
+        public async Task<ActionResult<IEnumerable<Wordsearch>>> Get()
         {
-            return await _context.Wordserches.ToListAsync();
+            return await _context.Wordsearches.ToListAsync();
         }
 
         // GET: api/Wordserches/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Wordserch>> GetWordserch(int id)
+        public async Task<ActionResult<Wordsearch>> GetWordserch(int id)
         {
-            var wordserch = await _context.Wordserches.FindAsync(id);
+            var wordserch = await _context.Wordsearches.FindAsync(id);
 
             if (wordserch == null)
             {
@@ -45,7 +45,7 @@ namespace EducationalGameMaker.Controllers
         // PUT: api/Wordserches/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutWordserch(int id, Wordserch wordserch)
+        public async Task<IActionResult> PutWordserch(int id, Wordsearch wordserch)
         {
             if (id != wordserch.Id)
             {
@@ -76,9 +76,9 @@ namespace EducationalGameMaker.Controllers
         // POST: api/Wordserches
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Wordserch>> PostWordserch(Wordserch wordserch)
+        public async Task<ActionResult<Wordsearch>> PostWordserch(Wordsearch wordserch)
         {
-            _context.Wordserches.Add(wordserch);
+            _context.Wordsearches.Add(wordserch);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetWordserch", new { id = wordserch.Id }, wordserch);
@@ -88,13 +88,13 @@ namespace EducationalGameMaker.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteWordserch(int id)
         {
-            var wordserch = await _context.Wordserches.FindAsync(id);
+            var wordserch = await _context.Wordsearches.FindAsync(id);
             if (wordserch == null)
             {
                 return NotFound();
             }
 
-            _context.Wordserches.Remove(wordserch);
+            _context.Wordsearches.Remove(wordserch);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -102,7 +102,7 @@ namespace EducationalGameMaker.Controllers
 
         private bool WordserchExists(int id)
         {
-            return _context.Wordserches.Any(e => e.Id == id);
+            return _context.Wordsearches.Any(e => e.Id == id);
         }
     }
 }
