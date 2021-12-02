@@ -11,7 +11,7 @@ namespace EducationalGameMaker.Models
         public string Title { get; set; }
         public string Subheading { get; set; }
         public int UserId { get; set; }
-        public virtual List<DragandDropTask> DragandDropTasks { get; set; }
+        public virtual List<Todo> Todos { get; set; }
         public virtual User User { get; set; }
 
 

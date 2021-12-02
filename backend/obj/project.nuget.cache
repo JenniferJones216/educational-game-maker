@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8yAix8B90rTsG+K00KPOLTUxIhDRlrLltX53F6PJqEKBvyrjdaSavkovLm8zbUyqzRMkrgQH8FBsb5n1mXF0HQ==",
+  "dgSpecHash": "4DFxd/GoeqtuBjjv1HYZ2OD/sJbR1cLy7n4NHiiDWOVrlYNg1H+JYdh8Xsf32KAMjgNy3xghDCi2DjYFPX8wow==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Student\\sorce\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
+  "projectFilePath": "C:\\Users\\Student\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Student\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\Student\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512",
