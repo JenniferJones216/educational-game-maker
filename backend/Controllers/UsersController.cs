@@ -20,6 +20,19 @@ namespace EducationalGameMaker.Controllers
         {
             _context = context;
         }
+        [Route("authenticate")]
+        [HttpGet]
+        public ActionResult<User> Authenticate(string u, string p)
+        {
+            var user =  _context.Users.Where(user => user.Username == u && user.Password == p).FirstOrDefault();
+            
+            if(user == null)
+            {
+                return null;
+            }
+
+            return Ok(user);
+        }
 
         // GET: api/Users
         [HttpGet]
