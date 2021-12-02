@@ -16,5 +16,8 @@ namespace EducationalGameMaker.Models
 
         public virtual List<Crossword> Crosswords { get; set; }
 
+        public virtual List<DragandDrop> DragandDrops { get; set; }
+
+
     }
 }
