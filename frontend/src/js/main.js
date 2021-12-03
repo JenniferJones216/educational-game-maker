@@ -1,16 +1,16 @@
 import header from "../components/header";
 
-import footer from "../components/footer";
+// import footer from "../components/footer";
 
 const headerElement = document.getElementById("navbar");
 
 export default() => {
   
   
-   SetupFooter();
+   // SetupFooter();
 }
 
 
-function SetupFooter(){
-   footerElement.innerHTML = footer.SetupFooter();
-}
+// function SetupFooter(){
+//    footerElement.innerHTML = footer.SetupFooter();
+// }
