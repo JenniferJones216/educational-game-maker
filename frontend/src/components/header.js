@@ -1,9 +1,10 @@
 export default {
-    SetupNavBar,
+    displayNavBar,
+    SetUpHeader,
     SetupHeaderEventListeners
 }
 
-export function SetupNavBar(){
+function displayNavBar(){
     return `
         <ul>
             <li id="navHome">Home</li>
@@ -14,9 +15,18 @@ export function SetupNavBar(){
     `;
 }
 
-export function SetupHeaderEventListeners(){
-    const btnMovies = document.getElementById('navMovies');
-    btnMovies.addEventListener("click", function(){
-        console.log('movie nav link is working');
+function SetUpHeader(){
+    const headerElement = document.getElementById('header');
+    headerElement.innerHTML = displayNavBar();
+}
+
+function SetupHeaderEventListeners(){
+    const btnHome = document.getElementById('navHome');
+    btnHome.addEventListener("click", function(){
+        console.log('home nav link is working');
     });
+    const btnDrag = document.getElementById('navDrag');
+    btnDrag.addEventListener("click", function(){
+        console.log('Drag btn working');
+    })
 }
