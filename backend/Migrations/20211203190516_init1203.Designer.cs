@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EducationalGameMaker.Migrations
 {
     [DbContext(typeof(GameContext))]
-    [Migration("20211203182002_Addedseeddata")]
-    partial class Addedseeddata
+    [Migration("20211203190516_init1203")]
+    partial class init1203
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -480,7 +480,16 @@ namespace EducationalGameMaker.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "entry"
+                            Name = "entry",
+                            Password = " yy ",
+                            Username = " xx "
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "midele",
+                            Password = " yy2 ",
+                            Username = " xx2 "
                         });
                 });
 

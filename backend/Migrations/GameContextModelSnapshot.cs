@@ -478,7 +478,16 @@ namespace EducationalGameMaker.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "entry"
+                            Name = "entry",
+                            Password = " yy ",
+                            Username = " xx "
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "midele",
+                            Password = " yy2 ",
+                            Username = " xx2 "
                         });
                 });
 
