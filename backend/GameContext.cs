@@ -38,8 +38,8 @@ namespace EducationalGameMaker
         protected override void OnModelCreating(ModelBuilder modelbuilder)
         {
             modelbuilder.Entity<User>().HasData(
-                new User() { Id = 1, Name = "entry" }
-
+                new User() { Id = 1, Name = "entry", Username=" xx ", Password=" yy " },
+                new User() { Id = 2, Name = "midele", Username = " xx2 ", Password = " yy2 " }
 
                 );
 
