@@ -11,10 +11,9 @@ namespace EducationalGameMaker.Models
         public string Title { get; set; }
         public string Subheading { get; set; }
         public int UserId { get; set; }
-        public virtual List<Todo> Todos { get; set; }
+        public string PromptText { get; set; }
+        public string WordBank { get; set; }
         public virtual User User { get; set; }
-
-
 
     }
 }
