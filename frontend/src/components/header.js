@@ -1,10 +1,14 @@
+import * as CONSTANTS from "../components/constants";
+import dragAndDrop from "../components/DragAndDrop";
+import crossword from "../components/Crossword";
+
 export default {
     displayNavBar,
     SetUpHeader,
     SetupHeaderEventListeners
 }
 
-function displayNavBar(){
+function displayNavBar() {
     return `
         <ul>
             <li id="navHome">Home</li>
@@ -15,18 +19,32 @@ function displayNavBar(){
     `;
 }
 
-function SetUpHeader(){
-    const headerElement = document.getElementById('header');
-    headerElement.innerHTML = displayNavBar();
+function SetUpHeader() {
+    CONSTANTS.headerElement.innerHTML = displayNavBar();
 }
 
-function SetupHeaderEventListeners(){
+function SetupHeaderEventListeners() {
     const btnHome = document.getElementById('navHome');
-    btnHome.addEventListener("click", function(){
+    btnHome.addEventListener("click", function () {
         console.log('home nav link is working');
     });
+    SetUpDragAndDropLink();
+    SetUpCrosswordLink();
+
+}
+
+function SetUpDragAndDropLink() {
     const btnDrag = document.getElementById('navDrag');
-    btnDrag.addEventListener("click", function(){
-        console.log('Drag btn working');
+    btnDrag.addEventListener("click", function () {
+        CONSTANTS.appElement.innerHTML = dragAndDrop.displayDragAndDrop();
+        dragAndDrop.SetUpDragFunctions();
+    })
+}
+
+function SetUpCrosswordLink() {
+    const btnCrossword = document.getElementById('navCrossword');
+    btnCrossword.addEventListener("click", function () {
+        CONSTANTS.appElement.innerHTML = crossword.displayCrossword();
+        crossword.crosswordFunctions();
     })
 }

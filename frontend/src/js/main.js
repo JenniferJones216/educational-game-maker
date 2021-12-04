@@ -1,26 +1,29 @@
 import header from "../components/header";
+import * as CONSTANTS from "../components/constants";
+import dragAndDrop from "../components/DragAndDrop";
 
-const appElement = document.getElementById('app');
 
 // import footer from "../components/footer";
 
-export default() => {
+export default () => {
    SetUp();
 
 }
 
-function SetUpHome(){
-   appElement.innerHTML = `
+function SetUpHome() {
+   CONSTANTS.appElement.innerHTML = `
       <h1>Welcome to the Educational Game Maker!</h1>
    `;
 }
 
-function SetUp(){
+function SetUp() {
    header.SetUpHeader();
    header.SetupHeaderEventListeners();
    SetUpHome();
-    // SetupFooter();
+   // SetupFooter();
 }
+
+
 
 // function SetupFooter(){
 //    footerElement.innerHTML = footer.SetupFooter();
