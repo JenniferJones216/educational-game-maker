@@ -32,12 +32,16 @@ body{
 
 /* Drag And Drop CSS */
 
-h1 {
+#dragAndDropTitle {
+    display: flex;
+    justify-content: space-around;
     margin-top: 10px;
     margin-bottom: 0px;
 }
-#subheading {
+#dragAndDropSubheading {
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
 }
 .CraftTable {
     display: flex;
@@ -71,8 +75,8 @@ h1 {
 .box {
     border-style: solid;
     display: inline-block;
-    width: 150px;
-    height: 24px;
+    width: 145px;
+    height: 35px;
     border-color: rgb(127, 140, 165);
     border-width: 3px;
     border-radius: 5px;
@@ -96,13 +100,13 @@ h3 {
     border-width: 5px;
     border-radius: 15px;
     background-color: rgb(234, 241, 239);
-    /* justify-content: space-around; */
+    justify-content: space-around;
     align-items: center;
     align-content: space-around;
 }
 .item {
     width: 140px;
-    height: 18px;
+    height: 30px;
     background-color: rgb(217, 234, 235);
     border-style: solid;
     border-color: rgb(129, 194, 54);
