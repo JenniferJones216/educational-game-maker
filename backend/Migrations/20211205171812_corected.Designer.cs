@@ -3,14 +3,16 @@ using EducationalGameMaker;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EducationalGameMaker.Migrations
 {
     [DbContext(typeof(GameContext))]
-    partial class GameContextModelSnapshot : ModelSnapshot
+    [Migration("20211205171812_corected")]
+    partial class corected
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -533,8 +535,8 @@ namespace EducationalGameMaker.Migrations
                         {
                             Id = 2,
                             Height = 10,
-                            Keywords = "java, ruby",
-                            Matrix = "j, e, f, b, l, p, e, p, r, e, c, a, m, d, c, i, m, g, t, c, o, i, v, o, k, p, r, j, s, m, p, b, w, a, s, q, r, o, u, a, r, i, x, i, l, e, l, h, r, s, w, o, l, c, q, l, i, r, p, c, s, c, r, e, e, a, u, m, g, r, a, l, x, h, p, b, u, r, y, i, j, a, l, a, y, c, a, l, m, p, c, l, o, j, u, r, e, r, m, t",
+                            Keywords = "java",
+                            Matrix = "j,e,f,b,l,p,e,p,r,e,c,a,m,d,c,i,m,g,t,c,o,i,v,o,k,p,r,j,s,m,p,b,w,a,s,q,r,o,u,a,r,i,x,i,l,e,l,h,r,s,w,o,l,c,q,l,i,r,p,c,s,c,r,e,e,a,u,m,g,r,a,l,x,h,p,b,u,r,y,i,j,a,l,a,y,c,a,l,m,p,c,l,o,j,u,r,e,r,m,t",
                             UserId = 1,
                             Width = 10
                         });
