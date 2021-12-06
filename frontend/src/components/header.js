@@ -10,7 +10,7 @@ export default {
 
 function displayNavBar() {
     return `
-        <ul>
+        <ul id="navbar">
             <li id="navHome">Home</li>
             <li id="navCrossword">Crossword</li>
             <li id="navDrag">Drag and Drop</li>

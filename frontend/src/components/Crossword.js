@@ -416,7 +416,6 @@ function crosswordFunctions() {
             orderArr.push(index);
             shuffle(orderArr);
         });
-        console.log(orderArr);
         loadClues()
     };
 
