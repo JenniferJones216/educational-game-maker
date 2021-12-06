@@ -1,11 +1,13 @@
 import * as CONSTANTS from "../components/constants";
 import dragAndDrop from "../components/DragAndDrop";
 import crossword from "../components/Crossword";
+import sword from "../components/Sword";
 
 export default {
     displayNavBar,
     SetUpHeader,
-    SetupHeaderEventListeners
+    SetupHeaderEventListeners,
+    SetUpSwordLink,
 }
 
 function displayNavBar() {
@@ -14,7 +16,7 @@ function displayNavBar() {
             <li id="navHome">Home</li>
             <li id="navCrossword">Crossword</li>
             <li id="navDrag">Drag and Drop</li>
-            <li id="navWord">Wordsearch</li>
+            <li id="navSWord">Wordsearch</li>
         </ul>
     `;
 }
@@ -30,6 +32,7 @@ function SetupHeaderEventListeners() {
     });
     SetUpDragAndDropLink();
     SetUpCrosswordLink();
+    SetUpSwordLink()
 
 }
 
@@ -46,5 +49,13 @@ function SetUpCrosswordLink() {
     btnCrossword.addEventListener("click", function () {
         CONSTANTS.appElement.innerHTML = crossword.displayCrossword();
         crossword.crosswordFunctions();
+    })
+}
+
+function SetUpSwordLink() {
+    const btnSword = document.getElementById('navSWord');
+    btnSword.addEventListener("click", function () {
+        CONSTANTS.appElement.innerHTML = sword.displaySword();
+        sword.SwordFunctions();
     })
 }
