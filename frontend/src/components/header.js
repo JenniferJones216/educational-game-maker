@@ -1,8 +1,10 @@
 import * as CONSTANTS from "../components/constants";
 import dragAndDrop from "../components/DragAndDrop";
 import crossword from "../components/Crossword";
+import loadDrag from "./LoadDrag";
+import apiActions from "../api/api-actions";
 import sword from "../components/Sword";
-import Home from "../components/Home"
+import Home from "../components/Home";
 
 export default {
     displayNavBar,
@@ -13,7 +15,7 @@ export default {
 
 function displayNavBar() {
     return `
-        <ul>
+        <ul id="navbar">
             <li id="navHome">Home</li>
             <li id="navCrossword">Crossword</li>
             <li id="navDrag">Drag and Drop</li>
@@ -37,12 +39,23 @@ function SetupHeaderEventListeners() {
 
 }
 
+// function SetUpDragAndDropLink() {
+//     const btnDrag = document.getElementById('navDrag');
+//     btnDrag.addEventListener("click", function () {
+//         CONSTANTS.appElement.innerHTML = dragAndDrop.displayDragAndDrop();
+//         dragAndDrop.SetUpDragFunctions();
+//     })
+// }
+
 function SetUpDragAndDropLink() {
     const btnDrag = document.getElementById('navDrag');
-    btnDrag.addEventListener("click", function () {
-        CONSTANTS.appElement.innerHTML = dragAndDrop.displayDragAndDrop();
-        dragAndDrop.SetUpDragFunctions();
-    })
+    btnDrag.addEventListener("click", function (evt) {
+        apiActions.getRequest(CONSTANTS.DragAndDropURL, data =>{
+            CONSTANTS.appElement.innerHTML = loadDrag.displayDragon(data);
+            dragAndDrop.SetUpDragFunctions();
+        });
+        
+    });
 }
 
 function SetUpCrosswordLink() {

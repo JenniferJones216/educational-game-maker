@@ -1,6 +1,22 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
+    "C:\\Users\\Jennifer\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Jennifer\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Jennifer\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
+        "projectName": "EducationalGameMaker",
+        "projectPath": "C:\\Users\\Jennifer\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
+        "packagesPath": "C:\\Users\\Jennifer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jennifer\\source\\repos\\final-projects-educational-game-maker\\backend\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Jennifer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
     "C:\\Users\\student\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj": {}
   },
   "projects": {
@@ -15,6 +31,7 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> dev
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -12,7 +12,7 @@ export default () => {
 
 function SetUpHome() {
    CONSTANTS.appElement.innerHTML = `
-      <h1>Welcome to the Educational Game Maker!</h1>
+      <h1 id="homeHeader">Welcome to the Educational Game Maker!</h1>
    `;
 }
 

@@ -7,9 +7,9 @@ export default {
 
 function displayDragAndDrop() {
     return `
-    <h1>An Issue in Health Care: Illiteracy
+    <h1 id="dragAndDropTitle">An Issue in Health Care: Illiteracy
     </h1>
-    <h4 id="subheading">Directions: Click and drag the phrases to the correct spaces in the text.</h4>
+    <h4 id="dragAndDropSubheading">Directions: Click and drag the phrases to the correct spaces in the text.</h4>
     <div class="container">
     </br>
         <div class="drop-targets" id="drop-targets">
@@ -54,24 +54,23 @@ function displayDragAndDrop() {
 
 }
 
+function SetUpDragFunctions() {
 
-function wordBankSetUp() {
     // select the item element
     const items = document.querySelectorAll('.item');
     // attach the dragstart event handler
     items.forEach(item => {
         item.addEventListener('dragstart', dragStart)
     });
-};
 
-// handle the dragstart
-function dragStart(e) {
-    console.log('drag starts...');
-    e.dataTransfer.setData('text/plain', e.target.id);
-}
+    // handle the dragstart
+    function dragStart(e) {
+        console.log('drag starts...');
+        e.dataTransfer.setData('text/plain', e.target.id);
+    }
 
-function targetSetup() {
     const boxes = document.querySelectorAll('.box');
+    // function targetSetup() {
     boxes.forEach(box => {
         box.addEventListener('dragenter', dragEnter)
         box.addEventListener('dragover', dragOver);
@@ -79,44 +78,37 @@ function targetSetup() {
         box.addEventListener('drop', drop);
         box.classList.add('HideFont');
     });
-}
 
-function dragEnter(ev) {
-    ev.preventDefault();
-    ev.target.classList.add('drag-over');
-}
-function dragOver(ev) {
-    ev.preventDefault();
-    ev.target.classList.add('drag-over');
-}
-function dragLeave(ev) {
-    ev.target.classList.remove('drag-over');
-}
-function drop(ev) {
-    ev.target.classList.remove('drag-over');
-    // get the draggable element
-    const id = ev.dataTransfer.getData('text/plain');
-    const draggable = document.getElementById(id);
-    if (ev.target.innerText == draggable.innerText) {
-        ev.target.innerText = "";
-        ev.target.classList.remove('HideFont');
-        // add it to the drop target
-        ev.target.appendChild(draggable);
+    function dragEnter(ev) {
+        ev.preventDefault();
+        ev.target.classList.add('drag-over');
     }
-    else {
-        ev.target.classList.add('wrong-answer')
-        setTimeout(() => {
-            ev.target.classList.remove('wrong-answer');
-        }, 500);
-    }
-}
 
-function SetUpDragFunctions() {
-    wordBankSetUp();
-    dragStart();
-    targetSetup();
-    dragEnter();
-    dragOver();
-    dragLeave();
-    drop();
+    function dragOver(ev) {
+        ev.preventDefault();
+        ev.target.classList.add('drag-over');
+    }
+
+    function dragLeave(ev) {
+        ev.target.classList.remove('drag-over');
+    }
+    function drop(ev) {
+        ev.target.classList.remove('drag-over');
+        // get the draggable element
+        const id = ev.dataTransfer.getData('text/plain');
+        const draggable = document.getElementById(id);
+        if (ev.target.innerText == draggable.innerText) {
+            ev.target.innerText = "";
+            ev.target.classList.remove('HideFont');
+            // add it to the drop target
+            ev.target.appendChild(draggable);
+        }
+        else {
+            ev.target.classList.add('wrong-answer')
+            setTimeout(() => {
+                ev.target.classList.remove('wrong-answer');
+            }, 500);
+        }
+    }
+
 }
