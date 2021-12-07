@@ -5,9 +5,6 @@ export default {
     SetUpDragFunctions
 }
 
-const items = document.querySelectorAll('.item');
-const boxes = document.querySelectorAll('.box');
-
 function displayDragAndDrop() {
     return `
     <h1 id="dragAndDropTitle">An Issue in Health Care: Illiteracy

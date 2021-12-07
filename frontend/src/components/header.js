@@ -1,6 +1,9 @@
 import * as CONSTANTS from "../components/constants";
 import dragAndDrop from "../components/DragAndDrop";
 import crossword from "../components/Crossword";
+import loadDrag from "./LoadDrag";
+import apiActions from "../api/api-actions";
+
 
 export default {
     displayNavBar,
@@ -33,12 +36,23 @@ function SetupHeaderEventListeners() {
 
 }
 
+// function SetUpDragAndDropLink() {
+//     const btnDrag = document.getElementById('navDrag');
+//     btnDrag.addEventListener("click", function () {
+//         CONSTANTS.appElement.innerHTML = dragAndDrop.displayDragAndDrop();
+//         dragAndDrop.SetUpDragFunctions();
+//     })
+// }
+
 function SetUpDragAndDropLink() {
     const btnDrag = document.getElementById('navDrag');
-    btnDrag.addEventListener("click", function () {
-        CONSTANTS.appElement.innerHTML = dragAndDrop.displayDragAndDrop();
-        dragAndDrop.SetUpDragFunctions();
-    })
+    btnDrag.addEventListener("click", function (evt) {
+        apiActions.getRequest(CONSTANTS.DragAndDropURL, data =>{
+            CONSTANTS.appElement.innerHTML = loadDrag.displayDragon(data);
+            dragAndDrop.SetUpDragFunctions();
+        });
+        
+    });
 }
 
 function SetUpCrosswordLink() {
