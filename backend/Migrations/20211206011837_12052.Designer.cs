@@ -3,14 +3,16 @@ using EducationalGameMaker;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EducationalGameMaker.Migrations
 {
     [DbContext(typeof(GameContext))]
-    partial class GameContextModelSnapshot : ModelSnapshot
+    [Migration("20211206011837_12052")]
+    partial class _12052
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,8 +61,6 @@ namespace EducationalGameMaker.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CrosswordId");
 
                     b.ToTable("CrosswordQuestions");
 
@@ -194,8 +194,8 @@ namespace EducationalGameMaker.Migrations
                         new
                         {
                             Id = 18,
-                            Answer = "DATDA",
-                            Clue = "Which Hogwarts teaching position is cursed? (Acronym)",
+                            Answer = "DefenseAgainstTheDarkArts",
+                            Clue = "Which Hogwarts teaching position is cursed?",
                             CrosswordId = 1
                         },
                         new
@@ -413,13 +413,6 @@ namespace EducationalGameMaker.Migrations
                             Answer = "Filch",
                             Clue = "Mrs. Norris Owner",
                             CrosswordId = 1
-                        },
-                        new
-                        {
-                            Id = 51,
-                            Answer = "Wheezes",
-                            Clue = "Weasley Wizard ____ (joke shop)",
-                            CrosswordId = 1
                         });
                 });
 
@@ -560,15 +553,6 @@ namespace EducationalGameMaker.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("EducationalGameMaker.Models.CrosswordQuestion", b =>
-                {
-                    b.HasOne("EducationalGameMaker.Models.Crossword", null)
-                        .WithMany("CrosswordQuestions")
-                        .HasForeignKey("CrosswordId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("EducationalGameMaker.Models.DragandDrop", b =>
                 {
                     b.HasOne("EducationalGameMaker.Models.User", "User")
@@ -589,11 +573,6 @@ namespace EducationalGameMaker.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("EducationalGameMaker.Models.Crossword", b =>
-                {
-                    b.Navigation("CrosswordQuestions");
                 });
 
             modelBuilder.Entity("EducationalGameMaker.Models.User", b =>

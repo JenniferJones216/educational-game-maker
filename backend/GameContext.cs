@@ -38,8 +38,8 @@ namespace EducationalGameMaker
         protected override void OnModelCreating(ModelBuilder modelbuilder)
         {
             modelbuilder.Entity<User>().HasData(
-                new User() { Id = 1, Name = "entry" }
-
+                new User() { Id = 1, Name = "entry", Username=" xx ", Password=" yy " },
+                new User() { Id = 2, Name = "midele", Username = " xx2 ", Password = " yy2 " }
 
                 );
 
@@ -183,8 +183,8 @@ namespace EducationalGameMaker
     {
         Id = 18,
         CrosswordId = 1,
-        Clue = "Which Hogwarts teaching position is cursed?",
-        Answer = "DefenseAgainstTheDarkArts"
+        Clue = "Which Hogwarts teaching position is cursed? (Acronym)",
+        Answer = "DATDA"
     },
     new CrosswordQuestion()
     {
@@ -403,6 +403,12 @@ namespace EducationalGameMaker
         CrosswordId = 1,
         Clue = "Mrs. Norris Owner",
         Answer = "Filch"
+    },
+    new CrosswordQuestion()
+    { Id = 51,
+    CrosswordId = 1,
+    Clue = "Weasley Wizard ____ (joke shop)",
+    Answer = "Wheezes"
     });
 
 
@@ -412,10 +418,19 @@ namespace EducationalGameMaker
                 {
                     Id = 1,
                     UserId = 1,
-                    Matrix = "J, Q, V, N, R, G, N, T, U, I, V, L, A, O, S, A, X, P, S, C,W, P, R, I, D, M, E, I, I, T, K, P, I, T, I, E, T, R, H, K, Z, U, A, C, K, S, G, C, X, T, X, T, B, N, F, Z, Y, S, G, J, O, D, L, U, Y, U, H, A, H, N, A, F, E, F, C, A, N, V, A, S, E, D, O, C, R, P, L, A, Y, A, F, X, E, E, V, C, P, J, H, B",
+                    Matrix = "J, Q, V, N, R, G, N, T, U, I, V, L, A, O, S, A, X, P, S, C, W, P, R, I, D, M, E, I, I, T, K, P, I, T, I, E, T, R, H, K, Z, U, A, C, K, S, G, C, X, T, X, T, B, N, F, Z, Y, S, G, J, O, D, L, U, Y, U, H, A, H, N, A, F, E, F, C, A, N, V, A, S, E, D, O, C, R, P, L, A, Y, A, F, X, E, E, V, C, P, J, H, B",
                     Height = 10,
                     Width = 10,
                     Keywords = "CANVAS, CODE, FUN, FUNCTION, GAMES, JAVASCRIPT, KIDS, PLAY, SHARE, VARIABLE"
+                },
+                new Wordsearch()
+                {
+                    Id = 2,
+                    UserId = 1,
+                    Matrix = "j, e, f, b, l, p, e, p, r, e, c, a, m, d, c, i, m, g, t, c, o, i, v, o, k, p, r, j, s, m, p, b, w, a, s, q, r, o, u, a, r, i, x, i, l, e, l, h, r, s, w, o, l, c, q, l, i, r, p, c, s, c, r, e, e, a, u, m, g, r, a, l, x, h, p, b, u, r, y, i, j, a, l, a, y, c, a, l, m, p, c, l, o, j, u, r, e, r, m, t",
+                    Height = 10,
+                    Width = 10,
+                    Keywords = "java, ruby"
                 }
 
 
