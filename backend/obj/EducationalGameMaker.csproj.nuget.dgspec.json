@@ -1,7 +1,27 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Student\\sorce\\repos\\fina\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\Jennifer\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Jennifer\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Jennifer\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
+        "projectName": "EducationalGameMaker",
+        "projectPath": "C:\\Users\\Jennifer\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
+        "packagesPath": "C:\\Users\\Jennifer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jennifer\\source\\repos\\final-projects-educational-game-maker\\backend\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Jennifer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\student\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj": {}
+>>>>>>> 5d325ae490e380ef7583d8c73823f2f603f406fb
   },
   "projects": {
     "C:\\Users\\Student\\sorce\\repos\\fina\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj": {
@@ -14,7 +34,12 @@
         "outputPath": "C:\\Users\\Student\\sorce\\repos\\fina\\final-projects-educational-game-maker\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> dev
+>>>>>>> 5d325ae490e380ef7583d8c73823f2f603f406fb
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

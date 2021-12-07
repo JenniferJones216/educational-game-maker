@@ -1,21 +1,47 @@
-/* body{
-    display: block;
-    background-color: grey;
+body{
+    display: inline;
+    background-color: #073b4c;
+    color: white;
     text-align: center;
 }
 
-ul{
-    list-style-type: none;
+/* #homeHeader{
+  align-self: center;
 } */
+
+#navbar{
+  display: flex;
+  list-style-type: none;
+  justify-content:left;
+  margin-bottom: 50px;
+  margin-top: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+} 
+
+#navbar >li{
+  font-size: 1rem;
+  padding: 10px 10px;
+}
+
+#navbar > li:hover{
+  background-color: white;
+  color: #073b4c;
+  border-radius: 5px;
+}
 
 /* Drag And Drop CSS */
 
-h1 {
+#dragAndDropTitle {
+    display: flex;
+    justify-content: space-around;
     margin-top: 10px;
     margin-bottom: 0px;
 }
-#subheading {
+#dragAndDropSubheading {
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
 }
 .CraftTable {
     display: flex;
@@ -49,8 +75,8 @@ h1 {
 .box {
     border-style: solid;
     display: inline-block;
-    width: 150px;
-    height: 24px;
+    width: 145px;
+    height: 35px;
     border-color: rgb(127, 140, 165);
     border-width: 3px;
     border-radius: 5px;
@@ -74,13 +100,13 @@ h3 {
     border-width: 5px;
     border-radius: 15px;
     background-color: rgb(234, 241, 239);
-    /* justify-content: space-around; */
+    justify-content: space-around;
     align-items: center;
     align-content: space-around;
 }
 .item {
     width: 140px;
-    height: 18px;
+    height: 30px;
     background-color: rgb(217, 234, 235);
     border-style: solid;
     border-color: rgb(129, 194, 54);
