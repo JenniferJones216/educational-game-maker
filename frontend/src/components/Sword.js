@@ -7,7 +7,8 @@ export default {
  function displaySword()
 { console.log("      =============displaySword==================   ");
     return `
-  <div>     
+  <div>    
+  <p>To Select Words Click On The Letters In Order</p>
 <div id="words">
 </div>
 <div id="found">
@@ -67,7 +68,7 @@ export default {
     const container = document.getElementById("container");
     const found = document.getElementById("found");
     var key = "";
-    var ansver = [];
+    var answer = [];
     var calck=0;
     var buff=[];
     var start;
@@ -114,7 +115,7 @@ export default {
          if(cell.value==number)
     {     
      
-    cell.style.color="yellow";
+    cell.style.color="green";
     
           }
             }     );
@@ -202,12 +203,12 @@ export default {
     
         
        
-         ansver.push(key);
+         answer.push(key);
          key = '';
           calck=0;
           console.log("unsolved   "+words);
-          found.innerText=ansver;
-          console.log("solved     "+ansver);
+          found.innerText=answer;
+          console.log("solved     "+answer);
          
         }
          

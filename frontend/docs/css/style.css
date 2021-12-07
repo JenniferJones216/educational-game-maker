@@ -11,11 +11,15 @@
 }
 
 #container {
+  margin: auto;
   border: solid;
-    height: 600px;
-    width: 600px;
+  height: 600px;
+  width: 600px;
   display: grid;
-  background-color: cornflowerblue;
+  background-color: lightgray;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8qtKcBJnoAijHS7hIHzJdOVghFTO_XyAKxLsUaga_ObDwcTyZSNOah9HxOFnFaDrJGCY&usqp=CAU
+  );
+  background-size: cover;
  
   
   grid-template-rows: repeat(var(--grid-rows), 1fr);
@@ -24,9 +28,7 @@
 }
 
 .grid-item {
- 
   padding: 1em;
-  
   text-align: center;
 }
 
