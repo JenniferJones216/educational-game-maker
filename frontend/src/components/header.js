@@ -2,6 +2,7 @@ import * as CONSTANTS from "../components/constants";
 import dragAndDrop from "../components/DragAndDrop";
 import crossword from "../components/Crossword";
 import sword from "../components/Sword";
+import Home from "../components/Home"
 
 export default {
     displayNavBar,
@@ -28,11 +29,11 @@ function SetUpHeader() {
 function SetupHeaderEventListeners() {
     const btnHome = document.getElementById('navHome');
     btnHome.addEventListener("click", function () {
-        console.log('home nav link is working');
+        CONSTANTS.appElement.innerHTML = Home.displayHome();
     });
     SetUpDragAndDropLink();
     SetUpCrosswordLink();
-    SetUpSwordLink()
+    SetUpSwordLink();
 
 }
 
