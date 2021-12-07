@@ -15,6 +15,7 @@
     height: 600px;
     width: 600px;
   display: grid;
+  background-color: cornflowerblue;
  
   
   grid-template-rows: repeat(var(--grid-rows), 1fr);
