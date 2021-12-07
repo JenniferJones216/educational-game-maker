@@ -71,14 +71,14 @@ function SetUpDragFunctions() {
 
     const boxes = document.querySelectorAll('.box');
     // function targetSetup() {
-        boxes.forEach(box => {
-            box.addEventListener('dragenter', dragEnter)
-            box.addEventListener('dragover', dragOver);
-            box.addEventListener('dragleave', dragLeave);
-            box.addEventListener('drop', drop);
-            box.classList.add('HideFont');
-        });
- 
+    boxes.forEach(box => {
+        box.addEventListener('dragenter', dragEnter)
+        box.addEventListener('dragover', dragOver);
+        box.addEventListener('dragleave', dragLeave);
+        box.addEventListener('drop', drop);
+        box.classList.add('HideFont');
+    });
+
     function dragEnter(ev) {
         ev.preventDefault();
         ev.target.classList.add('drag-over');
