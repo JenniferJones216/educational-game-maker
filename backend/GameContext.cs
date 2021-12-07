@@ -183,8 +183,8 @@ namespace EducationalGameMaker
     {
         Id = 18,
         CrosswordId = 1,
-        Clue = "Which Hogwarts teaching position is cursed?",
-        Answer = "DefenseAgainstTheDarkArts"
+        Clue = "Which Hogwarts teaching position is cursed? (Acronym)",
+        Answer = "DATDA"
     },
     new CrosswordQuestion()
     {
@@ -403,6 +403,12 @@ namespace EducationalGameMaker
         CrosswordId = 1,
         Clue = "Mrs. Norris Owner",
         Answer = "Filch"
+    },
+    new CrosswordQuestion()
+    { Id = 51,
+    CrosswordId = 1,
+    Clue = "Weasley Wizard ____ (joke shop)",
+    Answer = "Wheezes"
     });
 
 
