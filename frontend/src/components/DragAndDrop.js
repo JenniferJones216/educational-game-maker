@@ -71,10 +71,9 @@ function SetUpDragFunctions() {
         console.log('drag starts...');
         e.dataTransfer.setData('text/plain', e.target.id);
     }
-<<<<<<< HEAD
-
 
     const boxes = document.querySelectorAll('.box');
+    // function targetSetup() {
     boxes.forEach(box => {
         box.addEventListener('dragenter', dragEnter)
         box.addEventListener('dragover', dragOver);
@@ -87,33 +86,12 @@ function SetUpDragFunctions() {
         ev.preventDefault();
         ev.target.classList.add('drag-over');
     }
-    function dragOver(ev) {
-        ev.preventDefault();
-        ev.target.classList.add('drag-over');
-    }
-=======
-
-    const boxes = document.querySelectorAll('.box');
-    // function targetSetup() {
-        boxes.forEach(box => {
-            box.addEventListener('dragenter', dragEnter)
-            box.addEventListener('dragover', dragOver);
-            box.addEventListener('dragleave', dragLeave);
-            box.addEventListener('drop', drop);
-            box.classList.add('HideFont');
-        });
- 
-    function dragEnter(ev) {
-        ev.preventDefault();
-        ev.target.classList.add('drag-over');
-    }
 
     function dragOver(ev) {
         ev.preventDefault();
         ev.target.classList.add('drag-over');
     }
 
->>>>>>> e2e2254533b10f42cbac0ba27ff551b204882096
     function dragLeave(ev) {
         ev.target.classList.remove('drag-over');
     }
@@ -136,15 +114,4 @@ function SetUpDragFunctions() {
         }
     }
 
-<<<<<<< HEAD
-    // wordBankSetUp();
-    // dragStart();
-    // targetSetup();
-    // dragEnter();
-    // dragOver();
-    // dragLeave();
-    // drop();
 }
-=======
-}
->>>>>>> e2e2254533b10f42cbac0ba27ff551b204882096

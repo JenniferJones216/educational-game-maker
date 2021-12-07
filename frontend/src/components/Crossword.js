@@ -1,3 +1,4 @@
+import { lte } from "lodash";
 import * as CONSTANTS from "../components/constants";
 
 export default {
@@ -197,8 +198,8 @@ function displayCrossword() {
 
 
 function crosswordFunctions() {
-    var orderArr = [];
-    var data = [
+    const orderArr = [];
+    const data = [
         {
             clue: 'Hogwarts potions teacher',
             answer: 'Snape'
@@ -272,8 +273,8 @@ function crosswordFunctions() {
             answer: 'Marauders'
         },
         {
-            clue: 'Which Hogwarts teaching position is cursed?',
-            answer: 'DefenseAgainstTheDarkArts'
+            clue: 'Which Hogwarts teaching position is cursed? (Acronym)',
+            answer: 'DATDA'
         },
         {
             clue: 'The female competitor in the Triwizard Tournament',
@@ -398,13 +399,17 @@ function crosswordFunctions() {
         {
             clue: 'Mrs. Norris Owner',
             answer: 'Filch'
+        },
+        {
+            clue: 'Weasley Wizard ______ (their joke shop)',
+            answer: 'Wheezes'
         }
     ];
 
     function shuffle(array) {
-        for (var i = array.length - 1; i > 0; i--) {
-            var j = Math.floor(Math.random() * (i + 1));
-            var temp = array[i];
+        for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            const temp = array[i];
             array[i] = array[j];
             array[j] = temp;
         }
@@ -434,11 +439,11 @@ function crosswordFunctions() {
     //---------------------------------//
     //   GLOBAL VARIABLES              //
     //---------------------------------//
-    var board, wordArr, wordBank, wordsActive, boardMap, clues,
+    let board, wordArr, wordBank, wordsActive, boardMap, clues,
         focusChar, focusIndex = null,
         wordElementsAcross, wordElementsDown;
 
-    var Bounds = {
+    const Bounds = {
         top: 0,
         right: 0,
         bottom: 0,
@@ -464,9 +469,9 @@ function crosswordFunctions() {
     //---------------------------------//
 
     function Play() {
-        var charEleArr = document.getElementsByClassName('char');
+        const charEleArr = document.getElementsByClassName('char');
 
-        for (var i = 0; i < charEleArr.length; i++) {
+        for (let i = 0; i < charEleArr.length; i++) {
             //register character click and focus events
             RegisterChar(charEleArr[i], boardMap[i]);
             charEleArr[i].placeholder = "";
@@ -487,21 +492,21 @@ function crosswordFunctions() {
     function createClueHTML(wordElement) {
 
         //create clue holder
-        var clueElement = document.createElement('div');
+        const clueElement = document.createElement('div');
         clueElement.className += " line";
 
         //add line number
-        var lineNumSpan = document.createElement('span');
+        const lineNumSpan = document.createElement('span');
         lineNumSpan.innerHTML = wordElement.num + '. ';
         lineNumSpan.className += " lineNum";
 
         //add clue
-        var clueSpan = document.createElement('span');
+        const clueSpan = document.createElement('span');
         clueSpan.innerHTML = wordElement.clue;
         clueSpan.className += " cluesentence";
 
         //add word count
-        var wordCountSpan = document.createElement('span');
+        const wordCountSpan = document.createElement('span');
         wordCountSpan.innerHTML = ' (' + wordElement.wordCount + ')';
         wordCountSpan.className += " wordCount";
 
@@ -514,22 +519,22 @@ function crosswordFunctions() {
 
     function FormatClues() {
 
-        var cluesAcross = document.getElementById("cluesAcross");
-        var cluesDown = document.getElementById("cluesDown");
+        const cluesAcross = document.getElementById("cluesAcross");
+        const cluesDown = document.getElementById("cluesDown");
 
         cluesAcross.innerHTML = "";
         cluesDown.innerHTML = "";
 
-        var clueElement = "";
+        let clueElement = "";
 
-        for (var i = 0; i < wordElementsAcross.length; i++) {
+        for (let i = 0; i < wordElementsAcross.length; i++) {
 
             clueElement = createClueHTML(wordElementsAcross[i]);
             cluesAcross.appendChild(clueElement);
 
         }
 
-        for (var j = 0; j < wordElementsDown.length; j++) {
+        for (let j = 0; j < wordElementsDown.length; j++) {
 
             clueElement = createClueHTML(wordElementsDown[j]);
             cluesDown.appendChild(clueElement);
@@ -543,14 +548,15 @@ function crosswordFunctions() {
         wordElementsDown = [];
 
         CleanVars();
-        var canBuild = PopulateBoard();
-
-        while (!canBuild) {
+        let canBuild = PopulateBoard();
+        let attempts = 0;
+        while (!canBuild && attempts < 10) {
 
             CleanVars();
             canBuild = PopulateBoard();
-
+            attempts++;
         }
+        console.log(attempts + " attempts");
 
         document.getElementById("crossword").innerHTML =
             canBuild ? BoardToHtml() : "Failed to find crossword.";
@@ -559,12 +565,12 @@ function crosswordFunctions() {
     }
 
     function HideInputBoxes() {
-        var w = document.getElementsByClassName('word'),
+        const w = document.getElementsByClassName('word'),
             d = document.getElementsByClassName('clue'),
             dir = document.getElementsByClassName('clueDirection'),
             char = document.getElementsByClassName('char');
 
-        for (var i = 0; i < w.length; i++) {
+        for (let i = 0; i < w.length; i++) {
             AddClass(w[i], 'hide');
             AddClass(d[i], 'hide');
             AddClass(d[i], 'clueReadOnly');
@@ -572,11 +578,11 @@ function crosswordFunctions() {
             d[i].disabled = 'readonly';
         }
 
-        for (var i = 0; i < dir.length; i++) {
+        for (let i = 0; i < dir.length; i++) {
             RemoveClass(dir[i], 'disabled');
         }
 
-        for (var i = 0; i < char.length; i++) {
+        for (let i = 0; i < char.length; i++) {
             RemoveClass(char[i], 'charReadOnly');
             char[i].disabled = '';
         }
@@ -594,10 +600,10 @@ function crosswordFunctions() {
     function getWordCount(word) {
 
         if (hasWhiteSpace(word)) {
-            var words = word.split(/\s/g);
-            var wordCount = "";
+            const words = word.split(/\s/g);
+            let wordCount = "";
 
-            for (var i = 0; i < words.length; i++) {
+            for (let i = 0; i < words.length; i++) {
                 //last word
                 if (i === words.length - 1) {
                     wordCount = wordCount + words[i].length;
@@ -616,15 +622,15 @@ function crosswordFunctions() {
 
     function GetWordsFromInput() {
 
-        var clues = document.getElementsByClassName("line");
+        const clues = document.getElementsByClassName("line");
 
         wordArr = [];
 
-        for (var i = clues.length - 1; i >= 0; i--) {
+        for (let i = clues.length - 1; i >= 0; i--) {
 
-            var val = clues[i].getElementsByClassName("word")[0].value.toUpperCase();
-            var clue = clues[i].getElementsByClassName("clue")[0].value;
-            var wordCount = getWordCount(val);
+            const val = clues[i].getElementsByClassName("word")[0].value.toUpperCase();
+            const clue = clues[i].getElementsByClassName("clue")[0].value;
+            const wordCount = getWordCount(val);
             if (val !== null && val.length > 1) {
                 wordArr.push({
                     ele: clues[i],
@@ -644,9 +650,9 @@ function crosswordFunctions() {
         clues = [];
         board = [];
 
-        for (var i = 0; i < 50; i++) {
+        for (let i = 0; i < 50; i++) {
             board.push([]);
-            for (var j = 0; j < 50; j++) {
+            for (let j = 0; j < 50; j++) {
                 board[i].push({
                     value: null,
                     char: []
@@ -659,10 +665,10 @@ function crosswordFunctions() {
 
         PrepareBoard();
 
-        var boardisValid = false;
-        var len = wordBank.length;
+        let boardisValid = false;
+        const len = wordBank.length;
 
-        for (var i = 0; i < len; i++) {
+        for (let i = 0; i < len; i++) {
 
             boardisValid = AddWordToBoard();
 
@@ -695,16 +701,16 @@ function crosswordFunctions() {
     function PrepareBoard() {
         wordBank = [];
 
-        for (var i = 0, len = wordArr.length; i < len; i++) {
+        for (let i = 0, len = wordArr.length; i < len; i++) {
 
             wordBank.push(new WordObj(wordArr[i]));
 
         }
 
-        for (i = 0; i < wordBank.length; i++) {
-            for (var j = 0, wA = wordBank[i]; j < wA.char.length; j++) {
-                for (var k = 0, cA = wA.char[j]; k < wordBank.length; k++) {
-                    for (var l = 0, wB = wordBank[k]; k !== i && l < wB.char.length; l++) {
+        for (let i = 0; i < wordBank.length; i++) {
+            for (let j = 0, wA = wordBank[i]; j < wA.char.length; j++) {
+                for (let k = 0, cA = wA.char[j]; k < wordBank.length; k++) {
+                    for (let l = 0, wB = wordBank[k]; k !== i && l < wB.char.length; l++) {
                         wA.totalMatches += (cA === wB.char[l]) ? 1 : 0;
                     }
                 }
@@ -714,13 +720,13 @@ function crosswordFunctions() {
 
     // TODO: Clean this guy up
     function AddWordToBoard() {
-        var i, len, curIndex, curWord, curChar, testWord, testChar, minMatchDiff = 9999,
+        let i, len, curIndex, curWord, curChar, testWord, testChar, minMatchDiff = 9999,
             curMatchDiff;
 
         //first word
         if (wordsActive.length < 1) {
             curIndex = 0;
-            for (i = 0, len = wordBank.length; i < len; i++) {
+            for (let i = 0, len = wordBank.length; i < len; i++) {
                 if (wordBank[i].totalMatches < wordBank[curIndex].totalMatches) {
                     curIndex = i;
                 }
@@ -735,19 +741,19 @@ function crosswordFunctions() {
         else {
             curIndex = -1;
 
-            for (i = 0, len = wordBank.length; i < len; i++) {
+            for (let i = 0, len = wordBank.length; i < len; i++) {
                 curWord = wordBank[i];
                 curWord.effectiveMatches = 0;
                 curWord.successfulMatches = [];
-                for (var j = 0, lenJ = curWord.char.length; j < lenJ; j++) {
+                for (let j = 0, lenJ = curWord.char.length; j < lenJ; j++) {
                     curChar = curWord.char[j];
-                    for (var k = 0, lenK = wordsActive.length; k < lenK; k++) {
+                    for (let k = 0, lenK = wordsActive.length; k < lenK; k++) {
                         testWord = wordsActive[k];
-                        for (var l = 0, lenL = testWord.char.length; l < lenL; l++) {
+                        for (let l = 0, lenL = testWord.char.length; l < lenL; l++) {
                             testChar = testWord.char[l];
                             if (curChar === testChar) {
                                 curWord.effectiveMatches++;
-                                var curCross = {
+                                let curCross = {
                                     x: testWord.x,
                                     y: testWord.y,
                                     dir: 0
@@ -762,13 +768,13 @@ function crosswordFunctions() {
                                     curCross.x -= j;
                                 }
 
-                                var isMatch = true;
+                                let isMatch = true;
 
-                                for (var m = -1, lenM = curWord.char.length + 1; m < lenM; m++) {
-                                    var crossVal = [];
+                                for (let m = -1, lenM = curWord.char.length + 1; m < lenM; m++) {
+                                    let crossVal = [];
                                     if (m !== j) {
                                         if (curCross.dir === 0) {
-                                            var xIndex = curCross.x + m;
+                                            const xIndex = curCross.x + m;
 
                                             if (xIndex < 0 || xIndex > board.length - 1) {
                                                 isMatch = false;
@@ -780,7 +786,7 @@ function crosswordFunctions() {
                                             crossVal.push(board[xIndex][curCross.y - 1].value);
 
                                         } else {
-                                            var yIndex = curCross.y + m;
+                                            const yIndex = curCross.y + m;
 
                                             if (yIndex < 0 || yIndex > board[curCross.x].length - 1) {
                                                 isMatch = false;
@@ -843,13 +849,13 @@ function crosswordFunctions() {
             return false;
         }
 
-        var word = wordBank.splice(curIndex, 1);
+        const word = wordBank.splice(curIndex, 1);
 
-        var currentWordActive = updateWordInfo(word);
+        const currentWordActive = updateWordInfo(word);
 
         wordsActive.push(currentWordActive);
 
-        var wordisAdded = addCharInfoToBoard(currentWordActive);
+        const wordisAdded = addCharInfoToBoard(currentWordActive);
 
         if (!wordisAdded) {
             return false;
@@ -869,11 +875,11 @@ function crosswordFunctions() {
      */
     function updateWordInfo(activeWord) {
 
-        var currentActiveWord = activeWord[0];
+        const currentActiveWord = activeWord[0];
 
-        var matchArr = currentActiveWord.successfulMatches;
-        var matchIndex = Math.floor(Math.random() * matchArr.length);
-        var matchData = matchArr[matchIndex];
+        const matchArr = currentActiveWord.successfulMatches;
+        const matchIndex = Math.floor(Math.random() * matchArr.length);
+        const matchData = matchArr[matchIndex];
 
         currentActiveWord.x = matchData.x;
         currentActiveWord.y = matchData.y;
@@ -884,14 +890,14 @@ function crosswordFunctions() {
 
     function addCharInfoToBoard(currentWordActive) {
 
-        var pushIndex = wordsActive.length - 1;
+        const pushIndex = wordsActive.length - 1;
 
-        var prevObj = null;
+        let prevObj = null;
 
-        for (var i = 0; i < currentWordActive.char.length; i++) {
+        for (let i = 0; i < currentWordActive.char.length; i++) {
 
-            var xInd = currentWordActive.x;
-            var yInd = currentWordActive.y;
+            let xInd = currentWordActive.x;
+            let yInd = currentWordActive.y;
 
             if (currentWordActive.dir === 0) {
                 xInd = xInd + i;
@@ -904,9 +910,9 @@ function crosswordFunctions() {
                 return false;
             }
 
-            var cObj = createcObj(pushIndex, prevObj, currentWordActive.char[i]);
+            const cObj = createcObj(pushIndex, prevObj, currentWordActive.char[i]);
 
-            var cIndex = board[xInd][yInd].char.length;
+            const cIndex = board[xInd][yInd].char.length;
 
             board[xInd][yInd].char.push(cObj);
             board[xInd][yInd].value = currentWordActive.char[i];
@@ -929,12 +935,12 @@ function crosswordFunctions() {
 
         boardMap = [];
 
-        var boardHTML = '';
+        let boardHTML = '';
 
-        for (var i = Bounds.top - 1; i < Bounds.bottom + 2; i++) {
+        for (let i = Bounds.top - 1; i < Bounds.bottom + 2; i++) {
             boardHTML += "<div class='row'>";
 
-            for (var j = Bounds.left - 1; j < Bounds.right + 2; j++) {
+            for (let j = Bounds.left - 1; j < Bounds.right + 2; j++) {
                 boardHTML += BoardCharToElement(board[j][i]);
             }
             boardHTML += "</div>";
@@ -953,18 +959,18 @@ function crosswordFunctions() {
 
     function BoardCharToElement(c) {
 
-        var inner = "";
+        let inner = "";
 
         if (c.value !== null) {
-            var num = "";
+            let num = "";
 
-            for (var i = 0; i < c.char.length; i++) {
+            for (let i = 0; i < c.char.length; i++) {
 
-                var currentChar = c.char[i];
+                let currentChar = c.char[i];
                 currentChar.index = boardMap.length;
                 if (currentChar.prev === null) {
 
-                    var currentwordIndex = currentChar.wordIndex;
+                    let currentwordIndex = currentChar.wordIndex;
 
                     if (num === "") {
                         num = wordElementsDown.length + wordElementsAcross.length + 1;
@@ -1046,12 +1052,12 @@ function crosswordFunctions() {
             focusIndex = Math.max(0, boardChar.char.indexOf(focusChar));
         }
 
-        var inputBoxes = document.getElementsByClassName('char');
+        const inputBoxes = document.getElementsByClassName('char');
 
         //navigation via arrow keys
         this.onkeydown = function (e) {
 
-            var key = e.keyCode || e.which;
+            let key = e.keyCode || e.which;
 
             //left arrow or up - focus on prev square
             if (key === 37 || key === 38) {
@@ -1073,9 +1079,9 @@ function crosswordFunctions() {
 
         this.onkeyup = function (e) {
 
-            var key = e.keyCode || e.which;
+            let key = e.keyCode || e.which;
 
-            var prevChar = boardChar.char[focusIndex].prev;
+            let prevChar = boardChar.char[focusIndex].prev;
 
             //backspace and not first letter
             if (key === 8 && prevChar != null) {
@@ -1092,7 +1098,7 @@ function crosswordFunctions() {
 
         this.oninput = function (e) {
 
-            var nextChar = boardChar.char[focusIndex].next;
+            let nextChar = boardChar.char[focusIndex].next;
 
             //backspace at end of word
             if (e.inputType === 'deleteContentBackward' && nextChar === null) {
