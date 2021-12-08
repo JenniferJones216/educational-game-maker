@@ -242,3 +242,9 @@ button{
       color: #363b74;
       background: none;
     }
+    .footer{
+      left: 30%;
+      bottom: 0px;
+      margin-top: 15rem;
+      opacity: 75%;
+    }    

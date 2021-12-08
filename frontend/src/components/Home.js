@@ -6,13 +6,14 @@ export default {
 
 function displayHome(){
     return `
-    <h1>Welcome to Educational Game Maker
-    </h1>
-    <p id="direct">Directions: Click on any of the options in Nav to start a game, remember have fun !!</p>
+    <h1>Educational Game Maker</h1>
     <div class="container">
-    </br>
-    <h3 id="subHead"></h3>
-        <div>
+    <h3 id="subHead">Directions:</h3>
+          <ol>
+            <li>Remember have fun !!</li>
+            <li>Choose whatever game through navbar</li>
+            <li></li>
+          </ol>
         </div>
     </div>
     `;

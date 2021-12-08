@@ -1,4 +1,3 @@
-
 import main from './js/main';
 
 // check for login

@@ -1,20 +1,51 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\student\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj": {}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    "C:\\Users\\Student\\sorce\\repos\\fina\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\Jennifer\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\student\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj": {
+    "C:\\Users\\Jennifer\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\student\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
+        "projectUniqueName": "C:\\Users\\Jennifer\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
         "projectName": "EducationalGameMaker",
-        "projectPath": "C:\\Users\\student\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
-        "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\student\\source\\repos\\final-projects-educational-game-maker\\backend\\obj\\",
+        "projectPath": "C:\\Users\\Jennifer\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
+        "packagesPath": "C:\\Users\\Jennifer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jennifer\\source\\repos\\final-projects-educational-game-maker\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
+          "C:\\Users\\Jennifer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+>>>>>>> 497228f364f771eda59193ea9054d99908abcab6
+    "C:\\Users\\student\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj": {}
+>>>>>>> 5d325ae490e380ef7583d8c73823f2f603f406fb
+  },
+  "projects": {
+    "C:\\Users\\Student\\sorce\\repos\\fina\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Student\\sorce\\repos\\fina\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
+        "projectName": "EducationalGameMaker",
+        "projectPath": "C:\\Users\\Student\\sorce\\repos\\fina\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
+        "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Student\\sorce\\repos\\fina\\final-projects-educational-game-maker\\backend\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+<<<<<<< HEAD
+          "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
           "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+<<<<<<< HEAD
+=======
+>>>>>>> dev
+>>>>>>> 5d325ae490e380ef7583d8c73823f2f603f406fb
+>>>>>>> 497228f364f771eda59193ea9054d99908abcab6
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -103,7 +134,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,5 +1,3 @@
-
-
 export default {
    SetupFooter,
 }
@@ -8,11 +6,11 @@ export function SetupFooter(){
    return`
    <div class="footer">
    <ul>
-            <li>Dawn Natale -- </li>
-            <li>Eli Heeren --</li>
-            <li>Jaxxon Crowe --</li>
-            <li>Jay Huang --</li>
-            <li>Roman Shmigelskyi</li>
-          </ul></div>
+      <li>Roman Shmigelskyi</li>
+      <li>Jennifer Jones</li>
+      <li>Jhovany Cuevas</li>
+      <li>Dawna Natale</li>
+   </ul>
+   </div>
    `;
 }
