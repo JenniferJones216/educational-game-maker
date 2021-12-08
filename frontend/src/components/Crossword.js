@@ -1,6 +1,8 @@
 import { lte } from "lodash";
 import * as CONSTANTS from "../components/constants";
 
+
+
 export default {
     displayCrossword,
     crosswordFunctions
@@ -197,214 +199,217 @@ function displayCrossword() {
 }
 
 
-function crosswordFunctions() {
+async function crosswordFunctions(id) {
     const orderArr = [];
-    const data = [
-        {
-            clue: 'Hogwarts potions teacher',
-            answer: 'Snape'
-        },
-        {
-            clue: 'The one who teaches flying lessons',
-            answer: 'Hooch'
-        },
-        {
-            clue: 'To float: Wingardium _____',
-            answer: 'Leviosa'
-        },
-        {
-            clue: 'Who teaches Transfiguration?',
-            answer: 'McGonagall'
-        },
-        {
-            clue: 'Famous potions page',
-            answer: '394'
-        },
-        {
-            clue: 'The bravery house',
-            answer: 'Gryffindor'
-        },
-        {
-            clue: 'If you can talk to snakes you are a _____',
-            answer: 'Parseltongue'
-        },
-        {
-            clue: 'Harrys quidditch position',
-            answer: 'Seeker'
-        },
-        {
-            clue: 'The Dark Lord',
-            answer: 'Voldemort'
-        },
-        {
-            clue: 'Name of the adorable three headed dog',
-            answer: 'Fluffy'
-        },
-        {
-            clue: 'Famous magical high-security prison',
-            answer: 'Azkaban'
-        },
-        {
-            clue: 'The Cruciatus Curse is used for: ',
-            answer: 'Torture'
-        },
-        {
-            clue: 'Mad-___ Moody',
-            answer: 'eye'
-        },
-        {
-            clue: 'A person whos job is to catch dark wizards',
-            answer: 'Auror'
-        },
-        {
-            clue: 'Cute little house elf who befriends Harry',
-            answer: 'Dobby'
-        },
-        {
-            clue: 'Voldemorts real name',
-            answer: 'TomRiddle'
-        },
-        {
-            clue: 'This room only appears when a person is in great need of it',
-            answer: 'RoomOfRequirement'
-        },
-        {
-            clue: '___ Map',
-            answer: 'Marauders'
-        },
-        {
-            clue: 'Which Hogwarts teaching position is cursed? (Acronym)',
-            answer: 'DATDA'
-        },
-        {
-            clue: 'The female competitor in the Triwizard Tournament',
-            answer: 'FleurDelacour'
-        },
-        {
-            clue: 'To get rid of dementors',
-            answer: 'ExpectoPatronum'
-        },
-        {
-            clue: 'Nevilles Toad',
-            answer: 'Trevor'
-        },
-        {
-            clue: 'Girls Bathroom Ghost',
-            answer: 'MoaningMyrtle'
-        },
-        {
-            clue: 'This curse will end a life',
-            answer: 'AvadaKedavra'
-        },
-        {
-            clue: 'Patil twins names',
-            answer: 'PadmaAndParvati'
-        },
-        {
-            clue: 'Famous wand shop owner',
-            answer: 'Ollivander'
-        },
-        {
-            clue: 'Quote: "Im going to bed before either of you come up with another clever idea to get us killed- or worse,  _____"',
-            answer: 'expelled'
-        },
-        {
-            clue: 'A memory keeper',
-            answer: 'Pensieve'
-        },
-        {
-            clue: 'The job of Hermiones parents',
-            answer: 'Dentists'
-        },
-        {
-            clue: 'Non-magic folk',
-            answer: 'Muggles'
-        },
-        {
-            clue: 'Dudley, Petunia, and Vernon',
-            answer: 'Dursley'
-        },
-        {
-            clue: 'Foul name for a muggle-born',
-            answer: 'Mudblood'
-        },
-        {
-            clue: 'A constellation but also a member of the Slytherin House',
-            answer: 'Draco'
-        },
-        {
-            clue: 'A quite destructive arbor',
-            answer: 'WhompingWillow'
-        },
-        {
-            clue: 'Number of Voldemorts Horcruxes',
-            answer: 'Seven'
-        },
-        {
-            clue: 'R.A.B.',
-            answer: 'RegulusABlack'
-        },
-        {
-            clue: 'A potion that makes the drinker lucky for a period of time',
-            answer: 'FelixFelicis'
-        },
-        {
-            clue: 'Dolores Umbridges Patronus',
-            answer: 'PersianCat'
-        },
-        {
-            clue: 'Umbridges detention punishment was writing "I must not tell _____"',
-            answer: 'Lies'
-        },
-        {
-            clue: 'What does Devils Snare hate?',
-            answer: 'Sunlight'
-        },
-        {
-            clue: 'Buckbeak is a:',
-            answer: 'Hippogriff'
-        },
-        {
-            clue: 'Who killed Sirius Black?',
-            answer: 'Bellatrix'
-        },
-        {
-            clue: 'What name does Tonks HATE?',
-            answer: 'Nymphadora'
-        },
-        {
-            clue: 'Another name for the Weasleys house',
-            answer: 'TheBurrow'
-        },
-        {
-            clue: 'How many Weasley children are there?',
-            answer: 'Seven'
-        },
-        {
-            clue: 'Keeper of Keys and Grounds at Hogwarts',
-            answer: 'RubeusHagrid'
-        },
-        {
-            clue: 'The magical worlds famous sport',
-            answer: 'Quidditch'
-        },
-        {
-            clue: 'Incantation for the unlocking charm:',
-            answer: 'Alohomora'
-        },
-        {
-            clue: 'Whos body was found in the Chamber of Secrets',
-            answer: 'Ginny'
-        },
-        {
-            clue: 'Mrs. Norris Owner',
-            answer: 'Filch'
-        },
-        {
-            clue: 'Weasley Wizard ______ (their joke shop)',
-            answer: 'Wheezes'
-        }
-    ];
+     const dataCrossword = await fetch(CONSTANTS.CrosswordURL+"/" + id)
+    .then(response => response.json())
+    const data = dataCrossword.crosswordQuestions;
+    //[
+    //     {
+    //         clue: 'Hogwarts potions teacher',
+    //         answer: 'Snape'
+    //     },
+    //     {
+    //         clue: 'The one who teaches flying lessons',
+    //         answer: 'Hooch'
+    //     },
+    //     {
+    //         clue: 'To float: Wingardium _____',
+    //         answer: 'Leviosa'
+    //     },
+    //     {
+    //         clue: 'Who teaches Transfiguration?',
+    //         answer: 'McGonagall'
+    //     },
+    //     {
+    //         clue: 'Famous potions page',
+    //         answer: '394'
+    //     },
+    //     {
+    //         clue: 'The bravery house',
+    //         answer: 'Gryffindor'
+    //     },
+    //     {
+    //         clue: 'If you can talk to snakes you are a _____',
+    //         answer: 'Parseltongue'
+    //     },
+    //     {
+    //         clue: 'Harrys quidditch position',
+    //         answer: 'Seeker'
+    //     },
+    //     {
+    //         clue: 'The Dark Lord',
+    //         answer: 'Voldemort'
+    //     },
+    //     {
+    //         clue: 'Name of the adorable three headed dog',
+    //         answer: 'Fluffy'
+    //     },
+    //     {
+    //         clue: 'Famous magical high-security prison',
+    //         answer: 'Azkaban'
+    //     },
+    //     {
+    //         clue: 'The Cruciatus Curse is used for: ',
+    //         answer: 'Torture'
+    //     },
+    //     {
+    //         clue: 'Mad-___ Moody',
+    //         answer: 'eye'
+    //     },
+    //     {
+    //         clue: 'A person whos job is to catch dark wizards',
+    //         answer: 'Auror'
+    //     },
+    //     {
+    //         clue: 'Cute little house elf who befriends Harry',
+    //         answer: 'Dobby'
+    //     },
+    //     {
+    //         clue: 'Voldemorts real name',
+    //         answer: 'TomRiddle'
+    //     },
+    //     {
+    //         clue: 'This room only appears when a person is in great need of it',
+    //         answer: 'RoomOfRequirement'
+    //     },
+    //     {
+    //         clue: '___ Map',
+    //         answer: 'Marauders'
+    //     },
+    //     {
+    //         clue: 'Which Hogwarts teaching position is cursed? (Acronym)',
+    //         answer: 'DATDA'
+    //     },
+    //     {
+    //         clue: 'The female competitor in the Triwizard Tournament',
+    //         answer: 'FleurDelacour'
+    //     },
+    //     {
+    //         clue: 'To get rid of dementors',
+    //         answer: 'ExpectoPatronum'
+    //     },
+    //     {
+    //         clue: 'Nevilles Toad',
+    //         answer: 'Trevor'
+    //     },
+    //     {
+    //         clue: 'Girls Bathroom Ghost',
+    //         answer: 'MoaningMyrtle'
+    //     },
+    //     {
+    //         clue: 'This curse will end a life',
+    //         answer: 'AvadaKedavra'
+    //     },
+    //     {
+    //         clue: 'Patil twins names',
+    //         answer: 'PadmaAndParvati'
+    //     },
+    //     {
+    //         clue: 'Famous wand shop owner',
+    //         answer: 'Ollivander'
+    //     },
+    //     {
+    //         clue: 'Quote: "Im going to bed before either of you come up with another clever idea to get us killed- or worse,  _____"',
+    //         answer: 'expelled'
+    //     },
+    //     {
+    //         clue: 'A memory keeper',
+    //         answer: 'Pensieve'
+    //     },
+    //     {
+    //         clue: 'The job of Hermiones parents',
+    //         answer: 'Dentists'
+    //     },
+    //     {
+    //         clue: 'Non-magic folk',
+    //         answer: 'Muggles'
+    //     },
+    //     {
+    //         clue: 'Dudley, Petunia, and Vernon',
+    //         answer: 'Dursley'
+    //     },
+    //     {
+    //         clue: 'Foul name for a muggle-born',
+    //         answer: 'Mudblood'
+    //     },
+    //     {
+    //         clue: 'A constellation but also a member of the Slytherin House',
+    //         answer: 'Draco'
+    //     },
+    //     {
+    //         clue: 'A quite destructive arbor',
+    //         answer: 'WhompingWillow'
+    //     },
+    //     {
+    //         clue: 'Number of Voldemorts Horcruxes',
+    //         answer: 'Seven'
+    //     },
+    //     {
+    //         clue: 'R.A.B.',
+    //         answer: 'RegulusABlack'
+    //     },
+    //     {
+    //         clue: 'A potion that makes the drinker lucky for a period of time',
+    //         answer: 'FelixFelicis'
+    //     },
+    //     {
+    //         clue: 'Dolores Umbridges Patronus',
+    //         answer: 'PersianCat'
+    //     },
+    //     {
+    //         clue: 'Umbridges detention punishment was writing "I must not tell _____"',
+    //         answer: 'Lies'
+    //     },
+    //     {
+    //         clue: 'What does Devils Snare hate?',
+    //         answer: 'Sunlight'
+    //     },
+    //     {
+    //         clue: 'Buckbeak is a:',
+    //         answer: 'Hippogriff'
+    //     },
+    //     {
+    //         clue: 'Who killed Sirius Black?',
+    //         answer: 'Bellatrix'
+    //     },
+    //     {
+    //         clue: 'What name does Tonks HATE?',
+    //         answer: 'Nymphadora'
+    //     },
+    //     {
+    //         clue: 'Another name for the Weasleys house',
+    //         answer: 'TheBurrow'
+    //     },
+    //     {
+    //         clue: 'How many Weasley children are there?',
+    //         answer: 'Seven'
+    //     },
+    //     {
+    //         clue: 'Keeper of Keys and Grounds at Hogwarts',
+    //         answer: 'RubeusHagrid'
+    //     },
+    //     {
+    //         clue: 'The magical worlds famous sport',
+    //         answer: 'Quidditch'
+    //     },
+    //     {
+    //         clue: 'Incantation for the unlocking charm:',
+    //         answer: 'Alohomora'
+    //     },
+    //     {
+    //         clue: 'Whos body was found in the Chamber of Secrets',
+    //         answer: 'Ginny'
+    //     },
+    //     {
+    //         clue: 'Mrs. Norris Owner',
+    //         answer: 'Filch'
+    //     },
+    //     {
+    //         clue: 'Weasley Wizard ______ (their joke shop)',
+    //         answer: 'Wheezes'
+    //     }
+    // ];
 
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -428,6 +433,8 @@ function crosswordFunctions() {
 
     function loadClues() {
         for (let i = 0; i < 25; i++) {
+            console.log(data);
+            console.log(orderArr);
             //$("#cluesAcross").append("<div class='line'><input class='word' type='text' value="+ data[orderArr[i]].answer+"/><span class='lineNum'></span><input class='clue' value="+ data[orderArr[i]].clue+" />");
             $(".line").eq(i).find("input.word").attr("value", data[orderArr[i]].answer);
             $(".line").eq(i).find("input.clue").attr("value", data[orderArr[i]].clue);

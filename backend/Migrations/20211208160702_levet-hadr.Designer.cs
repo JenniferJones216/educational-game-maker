@@ -3,14 +3,16 @@ using EducationalGameMaker;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EducationalGameMaker.Migrations
 {
     [DbContext(typeof(GameContext))]
-    partial class GameContextModelSnapshot : ModelSnapshot
+    [Migration("20211208160702_levet-hadr")]
+    partial class levethadr
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,9 +27,6 @@ namespace EducationalGameMaker.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
@@ -41,7 +40,6 @@ namespace EducationalGameMaker.Migrations
                         new
                         {
                             Id = 1,
-                            Title = "Harry Potter Crossword",
                             UserId = 1
                         });
                 });
@@ -564,7 +562,7 @@ namespace EducationalGameMaker.Migrations
                             Height = 10,
                             Keywords = "table, white, pillow, lamp, bedding, baseboard, plant, floor, cord, bedroom",
                             Matrix = "g, h, n, s, a, l, s, t, b, o, t, a, b, e, l, a, m, p, e, u, b, a, s, e, b, o, a, r, d, t, w, r, b, e, d, w, a, r, d, c, o, h, f, l, o, r, o, t, i, g, s, l, i, l, e, c, o, t, n, t, k, t, l, t, i, a, a, o, g, u, a, i, b, s, e, y, l, l, m, t, p, l, a, n, t, f, l, o, o, r, f, r, g, y, t, y, x, q, y, e",
-                            UserId = 3,
+                            UserId = 1,
                             Width = 10
                         });
                 });
