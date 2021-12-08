@@ -10169,12 +10169,49 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Student\\.nuget\\packages\\": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\student\\.nuget\\packages\\": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\Student\\.nuget\\packages\\": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\Jennifer\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\student\\.nuget\\packages\\": {}
+>>>>>>> dev
+>>>>>>> 5d325ae490e380ef7583d8c73823f2f603f406fb
+>>>>>>> 497228f364f771eda59193ea9054d99908abcab6
+>>>>>>> 586c7b5196ccf0541a3d480ec6c42ae383ccf1df
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Student\\sorce\\repos\\fina\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\Student\\sorce\\repos\\fina\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\Jennifer\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
+      "projectName": "EducationalGameMaker",
+      "projectPath": "C:\\Users\\Jennifer\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
+      "packagesPath": "C:\\Users\\Jennifer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jennifer\\source\\repos\\final-projects-educational-game-maker\\backend\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Jennifer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+>>>>>>> 497228f364f771eda59193ea9054d99908abcab6
+      "projectUniqueName": "C:\\Users\\student\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
+>>>>>>> 5d325ae490e380ef7583d8c73823f2f603f406fb
+>>>>>>> 586c7b5196ccf0541a3d480ec6c42ae383ccf1df
       "projectName": "EducationalGameMaker",
       "projectPath": "C:\\Users\\Student\\sorce\\repos\\fina\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
       "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
@@ -10182,6 +10219,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+<<<<<<< HEAD
+=======
+=======
+        "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+<<<<<<< HEAD
+=======
+>>>>>>> dev
+>>>>>>> 5d325ae490e380ef7583d8c73823f2f603f406fb
+>>>>>>> 497228f364f771eda59193ea9054d99908abcab6
+>>>>>>> 586c7b5196ccf0541a3d480ec6c42ae383ccf1df
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10279,7 +10326,11 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
       "message": "Problem reading the cache file C:\\Users\\Student\\sorce\\repos\\fina\\final-projects-educational-game-maker\\backend\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
+      "message": "Problem reading the cache file C:\\Users\\student\\source\\repos\\final-projects-educational-game-maker\\backend\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+>>>>>>> 586c7b5196ccf0541a3d480ec6c42ae383ccf1df
     }
   ]
 }

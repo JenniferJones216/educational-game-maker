@@ -48,6 +48,7 @@ namespace EducationalGameMaker
                 new Crossword()
                 {
                     Id = 1,
+                    Title = "Harry Potter Crossword",
                     UserId = 1
 
                 }
