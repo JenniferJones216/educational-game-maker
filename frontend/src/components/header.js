@@ -12,18 +12,34 @@ export default {
     SetUpHeader,
     SetupHeaderEventListeners,
     SetUpSwordLink,
+    SetupUser
 }
 
 function displayNavBar() {
     return `
         <ul id="navbar">
             <li id="navHome">Home</li>
+            <li id="navUser">Users</li>
             <li id="navCrossword">Crossword</li>
             <li id="navDrag">Drag and Drop</li>
             <li id="navSWord">Wordsearch</li>
         </ul>
     `;
 }
+function SetupUser(){
+    const buttonUser = document.getElementById("navUser");
+    buttonUser.addEventListener(
+      "click", () => {
+      apiActions.getRequest(CONSTANTS.userURL, data => {
+        CONSTANTS.appElement.innerText = "vivi";
+        // CONSTANTS.Content.innerHTML = Artists.DisplayArtists(data);
+    // Artists.AddArtist();
+    //       Artists.SetupNavUser();
+        //   Artists.SetupEditButton();
+        //   Artists.SetupDetailButton();
+    })}
+      );
+    }
 
 function SetUpHeader() {
     CONSTANTS.headerElement.innerHTML = displayNavBar();
