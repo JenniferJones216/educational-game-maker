@@ -50,7 +50,7 @@ function SetupHeaderEventListeners() {
 function SetUpDragAndDropLink() {
     const btnDrag = document.getElementById('navDrag');
     btnDrag.addEventListener("click", function (evt) {
-        apiActions.getSingleRequest(CONSTANTS.DragAndDropURL + "/", 1, data => {
+        apiActions.getRequest(CONSTANTS.DragAndDropURL, data =>{
             CONSTANTS.appElement.innerHTML = loadDrag.displayDragon(data);
             dragAndDrop.SetUpDragFunctions();
         });
