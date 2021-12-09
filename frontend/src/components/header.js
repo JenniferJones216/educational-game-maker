@@ -6,6 +6,8 @@ import apiActions from "../api/api-actions";
 import sword from "../components/Sword";
 import Home from "../components/Home";
 import Users from "./Users";
+import Cookies from "./cookies"
+import Login from "./login"
 
 export default {
     displayNavBar,
@@ -18,6 +20,14 @@ export default {
 }
 
 function displayNavBar() {
+    let login = ''
+    let userId = Cookies.getCookie("userId");
+    console.log(userId);
+    if(!userId){
+        login = '<li id="navLogin">Login</li>'
+    } else {
+        login = '<li id="navProfile">Profile</li>'
+    }
     return `
         <ul id="navbar">
             <li id="navHome">Home</li>
@@ -25,6 +35,7 @@ function displayNavBar() {
             <li id="navCrossword">Crossword</li>
             <li id="navDrag">Drag and Drop</li>
             <li id="navSWord">Wordsearch</li>
+            ${login}
         </ul>
     `;
 }
@@ -39,10 +50,8 @@ function SetupUser(){
       "click", () => {
       apiActions.getRequest(CONSTANTS.userURL, data => {
        
-       
-        CONSTANTS.appElement.innerHTML = Users.DisplayUsers(data); 
-        Users.SetUpSwordStart();
-
+        CONSTANTS.appElement.innerHTML = Users.DisplayUsers(data);
+        Users.SetupUserLinks();
     })}
     );   
 }
@@ -58,6 +67,22 @@ function SetupHeaderEventListeners() {
     btnHome.addEventListener("click", function () {
         CONSTANTS.appElement.innerHTML = Home.displayHome();
     });
+    let userId = Cookies.getCookie("userId");
+    if(!userId){
+        const loginBtn = document.getElementById('navLogin');
+        loginBtn.addEventListener("click", function(){
+            // display profile
+            CONSTANTS.appElement.innerHTML = Login.displayLogin();
+            Login.setupLogin();
+        });
+    } else {
+        const profileBtn = document.getElementById('navProfile');
+        profileBtn.addEventListener("click", async function(){
+            // display profile
+            CONSTANTS.appElement.innerHTML = await Login.displayProfile(userId);
+            Login.setupProfile();
+        });
+    }
     SetUpDragAndDropLink();
     DisplayCrosswords();
     SetUpSwordLink();

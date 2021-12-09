@@ -2,6 +2,7 @@ import * as CONSTANTS from "./constants";
 import crossword from "./Crossword";
 import apiActions from  "../api/api-actions";
 import header from "./header";
+import cookie from "./cookies"
 
 export default{
     displayAllCrosswords,
@@ -91,7 +92,7 @@ export function SetupAddCrossword(){
 
         const newCrossword = {
             Title: document.getElementById("crosswordTitle").value,
-            UserId: 1,
+            UserId: cookie.getCookie("userId"),
             crosswordQuestions : crosswordQs
         };
 
@@ -111,15 +112,16 @@ function SetupAddClueButton(){
     const addClueButton = document.getElementById("addClueButton");
     const placeholderDiv = document.getElementById("placeholders");
     addClueButton.addEventListener("click", function(){
+        let div = document.createElement("div");
+        div.classList.add("line");
         let placeholderTemplate = `
-        <div class="line">
          <input class="word" type="text" placeholder="Answer"/>
          <span class="lineNum"></span>
          <input class="clue" placeholder="Clue"/>
-        </div>
      `;
+     div.innerHTML = placeholderTemplate;
      //might need to update lineNum property
-     placeholderDiv.innerHTML += placeholderTemplate;
+     placeholderDiv.appendChild(div);
     });
 }
 

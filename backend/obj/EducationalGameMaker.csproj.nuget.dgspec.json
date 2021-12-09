@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\student\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj": {}
+    "C:\\Users\\davis\\OneDrive\\Desktop\\Projects\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\student\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj": {
+    "C:\\Users\\davis\\OneDrive\\Desktop\\Projects\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\student\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
+        "projectUniqueName": "C:\\Users\\davis\\OneDrive\\Desktop\\Projects\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
         "projectName": "EducationalGameMaker",
-        "projectPath": "C:\\Users\\student\\source\\repos\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
-        "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\student\\source\\repos\\final-projects-educational-game-maker\\backend\\obj\\",
+        "projectPath": "C:\\Users\\davis\\OneDrive\\Desktop\\Projects\\final-projects-educational-game-maker\\backend\\EducationalGameMaker.csproj",
+        "packagesPath": "C:\\Users\\davis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\davis\\OneDrive\\Desktop\\Projects\\final-projects-educational-game-maker\\backend\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\davis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\davis\\source\\local_nuget_feed": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -103,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

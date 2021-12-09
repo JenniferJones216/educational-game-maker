@@ -1,5 +1,5 @@
 import main from './js/main';
-
+import cookies from "./components/cookies";
 // check for login
 // let userId = getCookie("userId");
 // if(userId == undefined)
@@ -10,7 +10,6 @@ import main from './js/main';
 
 //     main();
 // }
-
 main();
 
 // function getCookie(name){

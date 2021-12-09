@@ -5,32 +5,30 @@ import sword from "./Sword";
 
 export default {
     DisplayUsers,
-    SetUpSwordStart
+    SetUpSwordStart,
+    SetupUserLinks
 };
 
 export function DisplayUsers(data) {
  
     return `
- 
-    
-    
+    <div id="userList">
     ${data.map(user => {
-        return `<p class="usertList"><h3>${user.name}</h3>
-       <p> ${user.username} </p>  
-       <button class="playSword" id = "sw${user.id}"> Play Wordsearch </button>
-        
-      
+        return `
+        <div id="${user.id}">
+          <h3>${user.username}</h3>
+          <p> ${user.name} </p>
+       </div>  
         `;
     }).join('')}
-    </ul>`
-
-
-
-
-
+    </div>`
 }
-   
+ 
+export function SetupUserLinks(){
+  //functionality for setting up and displaying each user's games
+}
 
+//might not need
 export function SetUpSwordStart() {
    
     let playSword = document.querySelectorAll(".playSword");

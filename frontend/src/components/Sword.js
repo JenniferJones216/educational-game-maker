@@ -386,7 +386,7 @@ console.log("      =============SwordGameCreates=========   ");
 
 //////////////////////////////////////////////////////////////////////
   function GenerateWordSearch(words){
-    let dirs = ["WE","EW","NS","SN","NWSE","NESW","SWNE","SENW"]
+    let dirs = ["WE","EW","NS","SN","NWSE","SENW"]
     let templateString = randomString(100,'abcdefghijklmnopqrstuvwxyz');
     let stringGrid = [];
     let answersInPuzzle = [];
@@ -416,7 +416,7 @@ console.log("      =============SwordGameCreates=========   ");
                 for(letter in elementExplode){
                     toChange.push(10*y + x + parseInt(letter))
                 }
-                console.log(toChange);
+                //console.log(toChange);
                 toChange.forEach(element => {
                     if(stringGrid[element].touched){
                         possible = false;
@@ -429,7 +429,7 @@ console.log("      =============SwordGameCreates=========   ");
                         placed = true;
                     }
                 }
-                console.log(stringGrid);
+                //console.log(stringGrid);
                 break;
             case "EW":
                 attempts++;
@@ -439,7 +439,7 @@ console.log("      =============SwordGameCreates=========   ");
                 for(letter in elementExplode){
                     toChange.push(10*y + x + parseInt(letter))
                 }
-                console.log(toChange);
+                //console.log(toChange);
                 toChange.forEach(element => {
                     if(stringGrid[element].touched){
                         possible = false;
@@ -452,7 +452,7 @@ console.log("      =============SwordGameCreates=========   ");
                         placed = true;
                     }
                 }
-                console.log(stringGrid);
+                //console.log(stringGrid);
                 break;
             case "NS":
                 attempts++;
@@ -461,7 +461,7 @@ console.log("      =============SwordGameCreates=========   ");
                 for(letter in elementExplode){
                     toChange.push(10*(y + parseInt(letter)) + x)
                 }
-                console.log(toChange);
+                //console.log(toChange);
                 toChange.forEach(element => {
                     if(stringGrid[element].touched){
                         possible = false;
@@ -474,7 +474,7 @@ console.log("      =============SwordGameCreates=========   ");
                         placed = true;
                     }
                 }
-                console.log(stringGrid);
+                //console.log(stringGrid);
                 break;
             case "SN":
                 attempts++;
@@ -484,7 +484,7 @@ console.log("      =============SwordGameCreates=========   ");
                 for(letter in elementExplode){
                     toChange.push(10*(y + parseInt(letter)) + x)
                 }
-                console.log(toChange);
+                //console.log(toChange);
                 toChange.forEach(element => {
                     if(stringGrid[element].touched){
                         possible = false;
@@ -497,7 +497,7 @@ console.log("      =============SwordGameCreates=========   ");
                         placed = true;
                     }
                 }
-                console.log(stringGrid);
+                //console.log(stringGrid);
                 break;
             case "NWSE":
                 attempts++;
@@ -506,7 +506,7 @@ console.log("      =============SwordGameCreates=========   ");
                 for(letter in elementExplode){
                     toChange.push(10*(y + parseInt(letter)) + x + parseInt(letter))
                 }
-                console.log(toChange);
+                //console.log(toChange);
                 toChange.forEach(element => {
                     if(stringGrid[element].touched){
                         possible = false;
@@ -519,7 +519,7 @@ console.log("      =============SwordGameCreates=========   ");
                         placed = true;
                     }
                 }
-                console.log(stringGrid);
+                //console.log(stringGrid);
                 break;
            /*
            
@@ -578,7 +578,7 @@ console.log("      =============SwordGameCreates=========   ");
                 for(letter in elementExplode){
                     toChange.push(10*(y + parseInt(letter)) + x + parseInt(letter))
                 }
-                console.log(toChange);
+                //console.log(toChange);
                 toChange.forEach(element => {
                     if(stringGrid[element].touched){
                         possible = false;
@@ -591,7 +591,7 @@ console.log("      =============SwordGameCreates=========   ");
                         placed = true;
                     }
                 }
-                console.log(stringGrid);
+                //console.log(stringGrid);
                 break;
         }
     }
