@@ -110,6 +110,6 @@ function SetUpSwordLink() {
     const btnSword = document.getElementById('navSWord');
     btnSword.addEventListener("click", function () {
         CONSTANTS.appElement.innerHTML = sword.displaySword();
-        sword.SwordFunctions(2);
+        sword.SwordGameCreate();
     })
 }
