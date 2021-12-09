@@ -9,7 +9,7 @@ function displayDragAndDrop() {
     return `
     <h1 id="dragAndDropTitle">An Issue in Health Care: Illiteracy
     </h1>
-    <h4 id="dragAndDropSubheading">Directions: Click and drag the phrases to the correct spaces in the text.</h4>
+    <h6 id="dragAndDropSubheading">Directions: Click and drag the phrases to the correct spaces in the text.</h6>
     <div class="container">
     </br>
         <div class="drop-targets" id="drop-targets">

@@ -288,9 +288,13 @@ button{
     }
 
     #dragAndDropSubheading {
-      font-family: cursive;
+      font-family: fantasy;
     }
 
     ol {
       list-style: none;
+    }
+
+    .promptText {
+      font-family: cursive;
     }
