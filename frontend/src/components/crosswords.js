@@ -10,7 +10,7 @@ export default{
 export function displayAllCrosswords(crosswords){
     return `
         <h1 id="allCrosswords">Choose a Crossword from the List Below: </h1>
-        <h2 id="addCrosswordTitle">Or <button id="addCrossword">Add Your Own</button></h2>
+        <h4 id="addCrosswordTitle">Or <button id="addCrossword">Add Your Own</button></h4>
         <ol>
             ${crosswords.map(crossword =>{
                 return `
