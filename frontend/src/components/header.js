@@ -1,6 +1,5 @@
 import * as CONSTANTS from "../components/constants";
 import dragAndDrop from "../components/DragAndDrop";
-import crossword from "../components/Crossword";
 import allCrosswords from "../components/crosswords";
 import loadDrag from "./LoadDrag";
 import apiActions from "../api/api-actions";
@@ -12,6 +11,7 @@ export default {
     SetUpHeader,
     SetupHeaderEventListeners,
     SetUpSwordLink,
+    DisplayCrosswords
 }
 
 function displayNavBar() {
@@ -59,22 +59,15 @@ function SetUpDragAndDropLink() {
     });
 }
 
-//loop through all crosswords and set up this link for each Id//
-
-// function SetUpCrosswordLink() {
-//     const btnCrossword = document.getElementById('navCrossword');
-//     btnCrossword.addEventListener("click", function () {
-//             CONSTANTS.appElement.innerHTML = crossword.displayCrossword();
-//             crossword.crosswordFunctions(1);
-//     })
-// }
-
 function DisplayCrosswords() {
     const btnCrossword = document.getElementById('navCrossword');
     btnCrossword.addEventListener("click", function () {
         apiActions.getRequest(CONSTANTS.CrosswordURL, data => {
             console.log(data);
             CONSTANTS.appElement.innerHTML = allCrosswords.displayAllCrosswords(data);
+            allCrosswords.SetUpCrosswordLinks();
+            allCrosswords.SetupAddCrossword();
+            allCrosswords.SetUpCrosswordDeleteBtn();
         })
     })
     }

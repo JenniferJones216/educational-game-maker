@@ -1,4 +1,4 @@
-import { lte } from "lodash";
+// import { lte } from "lodash";
 import * as CONSTANTS from "../components/constants";
 
 
@@ -11,7 +11,7 @@ export default {
 function displayCrossword() {
     return `
     <div class="row info margin-bottom-sm">
-    <h1 class="col-md-12">Type the answers into the crossword.</h1>
+    <h1 id= "crosswordTitle"class="col-md-12"></h1>
     <div class="col-md-12">
         <button class="btn btn-outline-dark" id="btnReset">Reset <i class="fas fa-redo"></i></button>
         <button class="btn btn-outline-dark" id="btnCheck">Check Answers <i
@@ -29,7 +29,7 @@ function displayCrossword() {
     </div>
     <div class="col-lg-12 text-center wjec-crossword" id="crossword"></div>
 
-    <div class="wjec-crossword-clues col-lg-6 margin-bottom-md">
+    <div id= "crosswordAllClues" class="wjec-crossword-clues col-lg-6 margin-bottom-md">
         <h3>ACROSS</h3>
         <div class="clueBlock" id="cluesAcross">
             <div class="clueDirection" id="directionAcross"></div>
@@ -432,7 +432,7 @@ async function crosswordFunctions(id) {
     init();
 
     function loadClues() {
-        for (let i = 0; i < 25; i++) {
+        for (let i = 0; i < Math.min(data.length,25); i++) {
             console.log(data);
             console.log(orderArr);
             //$("#cluesAcross").append("<div class='line'><input class='word' type='text' value="+ data[orderArr[i]].answer+"/><span class='lineNum'></span><input class='clue' value="+ data[orderArr[i]].clue+" />");

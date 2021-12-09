@@ -76,17 +76,17 @@ namespace EducationalGameMaker.Controllers
         // POST: api/Crosswords
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Crossword>> PostCrossword(Crossword crossword)
+        public async Task<ActionResult<IEnumerable<Crossword>>> PostCrossword(Crossword crossword)
         {
             _context.Crosswords.Add(crossword);
             await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetCrossword", new { id = crossword.Id }, crossword);
+           return await _context.Crosswords.ToListAsync();
+            //return CreatedAtAction("GetCrossword", new { id = crossword.Id }, crossword);
         }
 
         // DELETE: api/Crosswords/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCrossword(int id)
+        public async Task<ActionResult<IEnumerable<Crossword>>> DeleteCrossword(int id)
         {
             var crossword = await _context.Crosswords.FindAsync(id);
             if (crossword == null)
@@ -97,7 +97,7 @@ namespace EducationalGameMaker.Controllers
             _context.Crosswords.Remove(crossword);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+           return await _context.Crosswords.ToListAsync();
         }
 
         private bool CrosswordExists(int id)
