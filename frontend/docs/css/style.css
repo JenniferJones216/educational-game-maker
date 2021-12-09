@@ -3,12 +3,12 @@
 }
 
 
-
+/* 
 :root {
   
   --grid-cols: 1;
   --grid-rows: 1;
-}
+} */
 
 #container {
   margin: auto;
@@ -16,8 +16,8 @@
   height: 600px;
   width: 600px;
   display: grid;
-  background-color: lightgray;
-  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8qtKcBJnoAijHS7hIHzJdOVghFTO_XyAKxLsUaga_ObDwcTyZSNOah9HxOFnFaDrJGCY&usqp=CAU
+  background-color:rgb(66, 68, 63);
+  //background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8qtKcBJnoAijHS7hIHzJdOVghFTO_XyAKxLsUaga_ObDwcTyZSNOah9HxOFnFaDrJGCY&usqp=CAU
   );
   background-size: cover;
  
