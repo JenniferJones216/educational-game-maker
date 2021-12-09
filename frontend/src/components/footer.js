@@ -11,6 +11,7 @@ export function SetupFooter(){
       <li>Jhovany Cuevas</li>
       <li>Dawna Natale</li>
    </ul>
+   <footer>&copy;2021 Educational Game Maker</footer>
    </div>
    `;
 }

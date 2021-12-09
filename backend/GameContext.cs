@@ -38,9 +38,9 @@ namespace EducationalGameMaker
         protected override void OnModelCreating(ModelBuilder modelbuilder)
         {
             modelbuilder.Entity<User>().HasData(
-                new User() { Id = 1, Name = "entry", Username=" x ", Password=" yy1 " },
-                new User() { Id = 2, Name = "middle", Username = " xx ", Password = " yy2 " },
-                new User() { Id =3, Name ="hard", Username ="xxx", Password ="yy3"}
+                new User() { Id = 1, Name = "Easy", Username= "Roman", Password=" yy1 " },
+                new User() { Id = 2, Name = "Medium", Username = "Jenny", Password = " yy2 " },
+                new User() { Id =3, Name ="Hard", Username = "Gio", Password ="yy3"}
                 );
 
             modelbuilder.Entity<Crossword>().HasData(

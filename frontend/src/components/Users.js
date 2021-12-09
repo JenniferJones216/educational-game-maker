@@ -13,14 +13,14 @@ export function DisplayUsers(data) {
     return `
  
     
-    <ul>
+    
     ${data.map(user => {
-        return `<li class="usertList"><h3>${user.name}</h3>
+        return `<p class="usertList"><h3>${user.name}</h3>
        <p> ${user.username} </p>  
-       <button class="playSword" id = "sw${user.id}"> play wordserch </button>
+       <button class="playSword" id = "sw${user.id}"> Play Wordsearch </button>
         
       
-        </li>`;
+        `;
     }).join('')}
     </ul>`
 
