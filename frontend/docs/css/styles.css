@@ -12,7 +12,7 @@ body{
 #navbar{
   display: flex;
   list-style-type: none;
-  justify-content:left;
+  justify-content: left;
   margin-bottom: 50px;
   margin-top: 10px;
   border: 1px solid white;
@@ -54,7 +54,7 @@ body{
     flex-flow: row wrap;
     width: 90%;
     margin: auto; */
-}
+
 .drop-targets, .create-drop-targets {
     width: 60%;    
 }
@@ -247,4 +247,54 @@ button{
       bottom: 0px;
       margin-top: 15rem;
       opacity: 75%;
+      justify-content: center;
     }    
+    #text {
+      font-family: cursive;
+    }
+
+    #subHead {
+      margin-top: 1.25rem;
+      margin-bottom: 1.25rem;
+      font-family: fantasy;
+    }
+
+    #title {
+      font-family: fantasy;
+    }
+
+    h1 {
+      font-family: fantasy;
+    }
+
+    h3 {
+      font-family: fantasy;
+    }
+    
+    p {
+      font-family: cursive;
+    }
+
+    .crosswordTitle{
+      font-family: cursive;
+    }
+
+    #addCrosswordTitle {
+      font-family: cursive;
+    }
+
+    #addCrossword{
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    #dragAndDropSubheading {
+      font-family: fantasy;
+    }
+
+    ol {
+      list-style: none;
+    }
+
+    .promptText {
+      font-family: cursive;
+    }

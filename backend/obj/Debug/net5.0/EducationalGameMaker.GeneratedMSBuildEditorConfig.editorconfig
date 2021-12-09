@@ -7,8 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = EducationalGameMaker
-<<<<<<< HEAD
-build_property.ProjectDir = C:\Users\Student\source\repos\final-projects-educational-game-maker\backend\
-=======
-build_property.ProjectDir = C:\Users\Jennifer\source\repos\final-projects-educational-game-maker\backend\
->>>>>>> f5794b3eba6910a8d52e8dbeaadd59a9a524d7a7
+build_property.ProjectDir = C:\Users\student\source\repos\final-projects-educational-game-maker\backend\

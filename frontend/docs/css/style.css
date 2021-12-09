@@ -2,12 +2,11 @@
   user-select: none;
 }
 
-
-
 :root {
   
   --grid-cols: 1;
   --grid-rows: 1;
+
 } 
 
 #container {
@@ -17,9 +16,6 @@
   width: 600px;
   display: grid;
   background-color:rgb(66, 68, 63);
-  //background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8qtKcBJnoAijHS7hIHzJdOVghFTO_XyAKxLsUaga_ObDwcTyZSNOah9HxOFnFaDrJGCY&usqp=CAU
-  );
-  background-size: cover;
  
   
   grid-template-rows: repeat(var(--grid-rows), 1fr);
