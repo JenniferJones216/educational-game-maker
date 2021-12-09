@@ -12,7 +12,7 @@ body{
 #navbar{
   display: flex;
   list-style-type: none;
-  justify-content:left;
+  justify-content: left;
   margin-bottom: 50px;
   margin-top: 10px;
   border: 1px solid white;
@@ -247,9 +247,9 @@ button{
       bottom: 0px;
       margin-top: 15rem;
       opacity: 75%;
+      justify-content: center;
     }    
     #text {
-      list-style: none;
       font-family: cursive;
     }
 
@@ -289,4 +289,8 @@ button{
 
     #dragAndDropSubheading {
       font-family: cursive;
+    }
+
+    ol {
+      list-style: none;
     }
