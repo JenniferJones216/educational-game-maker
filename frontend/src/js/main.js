@@ -2,7 +2,7 @@ import header from "../components/header";
 import * as CONSTANTS from "../components/constants";
 import dragAndDrop from "../components/DragAndDrop";
 
-
+import users from "../components/Users" 
 import footer from "../components/footer";
 
 export default () => {
@@ -11,18 +11,7 @@ export default () => {
 }
 
 function SetUpHome() {
-   CONSTANTS.appElement.innerHTML = `
-      <h1 id="homeHeader">Educational Game Maker</h1>
-      <h3 id="subHead">Directions:</h3>
-      <div class="home">
-            <ol>
-              <li>Remember have fun !!</li>
-              <li>Choose whatever game through navbar</li>
-              <li></li>
-            </ol>
-          </div>
-      </div>
-   `;
+   CONSTANTS.appElement.innerHTML = ``;
 }
 
 function SetUp() {
@@ -30,6 +19,7 @@ function SetUp() {
    header.SetupHeaderEventListeners();
    SetUpHome();
    SetupFooter();
+   header.SetupUser();
 }
 
 

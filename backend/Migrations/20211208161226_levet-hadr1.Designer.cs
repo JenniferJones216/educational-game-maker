@@ -3,14 +3,16 @@ using EducationalGameMaker;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EducationalGameMaker.Migrations
 {
     [DbContext(typeof(GameContext))]
-    partial class GameContextModelSnapshot : ModelSnapshot
+    [Migration("20211208161226_levet-hadr1")]
+    partial class levethadr1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,9 +27,6 @@ namespace EducationalGameMaker.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
@@ -41,7 +40,6 @@ namespace EducationalGameMaker.Migrations
                         new
                         {
                             Id = 1,
-                            Title = "Harry Potter Crossword",
                             UserId = 1
                         });
                 });
@@ -491,23 +489,23 @@ namespace EducationalGameMaker.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Easy",
+                            Name = "entry",
                             Password = " yy1 ",
-                            Username = "Roman"
+                            Username = " x "
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Medium",
+                            Name = "middle",
                             Password = " yy2 ",
-                            Username = "Jenny"
+                            Username = " xx "
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Hard",
+                            Name = "hard",
                             Password = "yy3",
-                            Username = "Gio"
+                            Username = "xxx"
                         });
                 });
 
