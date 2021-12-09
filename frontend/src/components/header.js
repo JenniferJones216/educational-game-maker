@@ -6,6 +6,7 @@ import loadDrag from "./LoadDrag";
 import apiActions from "../api/api-actions";
 import sword from "../components/Sword";
 import Home from "../components/Home";
+import Users from "./Users";
 
 export default {
     displayNavBar,
@@ -26,20 +27,26 @@ function displayNavBar() {
         </ul>
     `;
 }
+
+
+
+
 function SetupUser(){
     const buttonUser = document.getElementById("navUser");
+   
     buttonUser.addEventListener(
       "click", () => {
       apiActions.getRequest(CONSTANTS.userURL, data => {
-        CONSTANTS.appElement.innerText = "vivi";
-        // CONSTANTS.Content.innerHTML = Artists.DisplayArtists(data);
-    // Artists.AddArtist();
-    //       Artists.SetupNavUser();
-        //   Artists.SetupEditButton();
-        //   Artists.SetupDetailButton();
+       
+       
+        CONSTANTS.appElement.innerHTML = Users.DisplayUsers(data); 
+        Users.SetUpSwordStart();
+
     })}
-      );
-    }
+    );   
+}
+
+
 
 function SetUpHeader() {
     CONSTANTS.headerElement.innerHTML = displayNavBar();
@@ -53,6 +60,9 @@ function SetupHeaderEventListeners() {
     SetUpDragAndDropLink();
     DisplayCrosswords();
     SetUpSwordLink();
+    SetupUser();
+
+
 
 }
 
@@ -100,6 +110,6 @@ function SetUpSwordLink() {
     const btnSword = document.getElementById('navSWord');
     btnSword.addEventListener("click", function () {
         CONSTANTS.appElement.innerHTML = sword.displaySword();
-        sword.SwordFunctions();
+        sword.SwordFunctions(2);
     })
 }

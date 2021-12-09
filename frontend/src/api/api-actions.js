@@ -17,6 +17,8 @@ function getRequest(location, callback) {
       })
       .catch(err => console.log(err));
 }
+
+
 function getSingleRequest(location, id, callback) {
     fetch(location + id)
       .then((response) => response.json())

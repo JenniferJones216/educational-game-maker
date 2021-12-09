@@ -49,11 +49,11 @@ body{
     justify-content: space-around;
     margin: 20px;
     }
-.container {
+/* .container {
     display: flex;
     flex-flow: row wrap;
     width: 90%;
-    margin: auto;
+    margin: auto; */
 }
 .drop-targets, .create-drop-targets {
     width: 60%;    
