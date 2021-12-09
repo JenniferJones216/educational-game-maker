@@ -6,7 +6,8 @@
   
   --grid-cols: 1;
   --grid-rows: 1;
-}
+
+} 
 
 #container {
   margin: auto;
