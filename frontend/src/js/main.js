@@ -1,6 +1,7 @@
 import header from "../components/header";
 import * as CONSTANTS from "../components/constants";
 import dragAndDrop from "../components/DragAndDrop";
+import Home from "../components/Home";
 
 import users from "../components/Users" 
 import footer from "../components/footer";
@@ -11,7 +12,7 @@ export default () => {
 }
 
 function SetUpHome() {
-   CONSTANTS.appElement.innerHTML = ``;
+   CONSTANTS.appElement.innerHTML = Home.displayHome();
 }
 
 function SetUp() {

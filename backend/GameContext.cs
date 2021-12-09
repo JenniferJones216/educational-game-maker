@@ -48,19 +48,27 @@ namespace EducationalGameMaker
                 new Crossword()
                 {
                     Id = 1,
-                    Title = "Harry Potter Crossword",
+                    Title = "Harry Potter Trivia",
+                    UserId = 1
+
+                },
+                new Crossword()
+                {
+                    Id = 2,
+                    Title = "Frank Grillo Trivia",
+                    UserId = 1
+
+                },
+                new Crossword()
+                {
+                    Id = 3,
+                    Title = "Lyrics Trivia",
                     UserId = 1
 
                 }
                 );
+
             modelbuilder.Entity<CrosswordQuestion>().HasData(
-            new CrosswordQuestion()
-            {
-                Id = 50,
-                CrosswordId = 1,
-                Clue = "Hogwarts potions teacher",
-                Answer = "Snape"
-            },
     new CrosswordQuestion()
     {
         Id = 1,
@@ -86,8 +94,8 @@ namespace EducationalGameMaker
     {
         Id = 4,
         CrosswordId = 1,
-        Clue = "Famous potions page",
-        Answer = "394"
+        Clue = "Famous potions page 39__",
+        Answer = "Four"
     },
     new CrosswordQuestion()
     {
@@ -405,12 +413,114 @@ namespace EducationalGameMaker
         Clue = "Mrs. Norris Owner",
         Answer = "Filch"
     },
+     new CrosswordQuestion()
+      {
+          Id = 50,
+          CrosswordId = 1,
+          Clue = "Hogwarts potions teacher",
+          Answer = "Snape"
+      },
     new CrosswordQuestion()
     { Id = 51,
     CrosswordId = 1,
     Clue = "Weasley Wizard ____ (joke shop)",
     Answer = "Wheezes"
-    });
+    },
+     new CrosswordQuestion()
+     {
+         Id = 52,
+         CrosswordId = 2,
+         Clue = "His current age (2021)",
+         Answer = "FiftySix"
+     },
+     new CrosswordQuestion()
+     {
+         Id = 53,
+         CrosswordId = 2,
+         Clue = "His character in Captain America",
+         Answer = "BrockRumlow"
+     },
+     new CrosswordQuestion()
+     {
+         Id = 54,
+         CrosswordId = 2,
+         Clue = "His diet style of choice",
+         Answer = "Paleo"
+     },
+     new CrosswordQuestion()
+     {
+         Id = 55,
+         CrosswordId = 2,
+         Clue = "Last name translation (Italian)",
+         Answer = "Cricket"
+     },
+     new CrosswordQuestion()
+     {
+         Id = 56,
+         CrosswordId = 2,
+         Clue = "Besides Marvel, he starred in this movie series:",
+         Answer = "ThePurge"
+     },
+     new CrosswordQuestion()
+     {
+         Id = 57,
+         CrosswordId = 2,
+         Clue = "Oldest son",
+         Answer = "Remy"
+     },
+     new CrosswordQuestion()
+     {
+         Id = 58,
+         CrosswordId = 2,
+         Clue = "How many times has he been married?",
+         Answer = "Twice"
+     },
+     new CrosswordQuestion()
+     {
+         Id = 59,
+         CrosswordId = 2,
+         Clue = "His biggest passion",
+         Answer = "Boxing"
+     },
+        new CrosswordQuestion()
+        {
+         Id = 60,
+         CrosswordId = 3,
+         Clue = "She played the fiddle in an Irish band but she fell in love with an _____ man.",
+         Answer = "English"
+        },
+       new CrosswordQuestion()
+       {
+           Id = 61,
+           CrosswordId = 3,
+           Clue = "One, don’t pick up the _____, you know he’s only calling ’cause he’s drunk and alone",
+           Answer = "Phone"
+       }, new CrosswordQuestion()
+       {
+           Id = 62,
+           CrosswordId = 3,
+           Clue = "Welcome to the Hotel ____",
+           Answer = "California"
+       }, new CrosswordQuestion()
+       {
+           Id = 63,
+           CrosswordId = 3,
+           Clue = "Baby you're a ____",
+           Answer = "Firework"
+       }, new CrosswordQuestion()
+       {
+           Id = 64,
+           CrosswordId = 3,
+           Clue = "For I can't help ___ in love with you",
+           Answer = "Falling"
+       }, new CrosswordQuestion()
+       {
+           Id = 65,
+           CrosswordId = 3,
+           Clue = "What's in your head, in your head? _____",
+           Answer = "Zombie"
+       }
+    );
 
 
             modelbuilder.Entity<Wordsearch>().HasData(
