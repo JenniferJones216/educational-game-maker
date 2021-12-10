@@ -34,7 +34,6 @@ export function displayAllCrosswords(crosswords){
 
 export function SetUpCrosswordLinks(){
     let crosswordLinks = document.querySelectorAll('.crosswordTitle');
-    //let crosswordId = parseInt(crosswordLinks.id.replace("crossword-", ""));
     crosswordLinks.forEach(crosswordLink => {
         crosswordLink.addEventListener("click", function() {
             console.log("title clicked")

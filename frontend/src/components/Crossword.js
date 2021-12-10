@@ -1,4 +1,5 @@
 import * as CONSTANTS from "../components/constants";
+import crosswords from "./crosswords"
 
 
 
@@ -10,7 +11,7 @@ export default {
 function displayCrossword() {
     return `
     <div class="row info margin-bottom-sm">
-    <h1 id= "crosswordTitle"class="col-md-12"></h1>
+    <h1 id="crosswordDisplayTitle" class="col-md-12"></h1>
     <div class="col-md-12">
         <button class="btn" id="btnReset">Reset <i class="fas fa-redo"></i></button>
         <button class="btn " id="btnCheck">Check Answers <i
@@ -201,6 +202,7 @@ async function crosswordFunctions(id) {
      const dataCrossword = await fetch(CONSTANTS.CrosswordURL+"/" + id)
     .then(response => response.json())
     const data = dataCrossword.crosswordQuestions;
+    const title = dataCrossword.title;
 
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -217,10 +219,16 @@ async function crosswordFunctions(id) {
             orderArr.push(index);
             shuffle(orderArr);
         });
+        loadTitle()
         loadClues()
     };
 
     init();
+
+    function loadTitle(){
+        const crosswordDisplayTitle = document.getElementById('crosswordDisplayTitle');
+        crosswordDisplayTitle.innerText = title;
+    }
 
     function loadClues() {
         for (let i = 0; i < Math.min(data.length,25); i++) {

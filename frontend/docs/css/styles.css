@@ -49,6 +49,10 @@ button{
 
 /* Drag And Drop CSS */
 
+.DnD_delete{
+  font-size: 0.8rem;
+}
+
 #dragAndDropTitle {
     display: flex;
     justify-content: space-around;

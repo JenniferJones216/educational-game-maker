@@ -151,7 +151,6 @@ export function setupProfile(){
         dnd.addEventListener("click", function(){
             let id = parseInt(dnd.id.replace("dnd-",""));
             CONSTANTS.appElement.innerHTML = LoadDrag.displayDragAndDrop(id);
-            console.log(id)
             dragFuncs.SetUpDragFunctions(id);
         });
     });

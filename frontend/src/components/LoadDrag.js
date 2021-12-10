@@ -18,5 +18,5 @@ function displayDragAndDrop(dragandDrop) {
 
     </div>
     `;
-    
+
 }    
