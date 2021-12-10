@@ -5,23 +5,20 @@ body{
     text-align: center;
 }
 
-/* #homeHeader{
-  align-self: center;
-} */
-
 #navbar{
   display: flex;
   list-style-type: none;
   justify-content: left;
   margin-bottom: 50px;
   margin-top: 10px;
-  border: 1px solid white;
-  border-radius: 5px;
+  border-bottom: 1px solid white;
+  contain: content;
 } 
 
 #navbar >li{
   font-size: 1rem;
   padding: 10px 10px;
+  cursor: pointer;
 }
 
 #navbar > li:hover{
@@ -29,6 +26,26 @@ body{
   color: #073b4c;
   border-radius: 5px;
 }
+
+#navbar > #navLogin{
+ margin-left: auto;
+ margin-right: 0.1em;
+}
+
+#navbar > #navProfile{
+  margin-left: auto;
+  margin-right: 0.1em;
+}
+
+button{
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #073b4c;
+  border-color: white;
+  background-color: white;
+}
+
 
 /* Drag And Drop CSS */
 
@@ -130,8 +147,21 @@ h3 {
 
 /* CROSSWORD CSS */
 
-button{
+.btnDeleteCrossword{
+  font-size: 0.8rem;
+}
+
+.crosswordTitle:hover{
+  cursor: pointer;
+}
+
+.col-md-12 > button{
     margin-bottom: 10px;
+    color: white;
+  }
+
+  .col-md-12 > button:hover{
+    color: black;
   }
   
   .info{
@@ -145,6 +175,7 @@ button{
     .wjec-crossword .crosswordDisplay {
       top: 5rem;
     }
+    
     .wjec-crossword .clueBlock {
       position: relative;
       margin-bottom: 5em;
@@ -242,13 +273,22 @@ button{
       color: #363b74;
       background: none;
     }
+
+    /* END OF CW CSS */
+
+
     .footer{
       left: 30%;
       bottom: 0px;
       margin-top: 15rem;
       opacity: 75%;
       justify-content: center;
-    }    
+    }
+
+    .footer > ul > li{
+      list-style-type: none;
+    }
+    
     #text {
       font-family: cursive;
     }

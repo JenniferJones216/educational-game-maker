@@ -13,13 +13,11 @@ function displayCrossword() {
     <div class="row info margin-bottom-sm">
     <h1 id= "crosswordTitle"class="col-md-12"></h1>
     <div class="col-md-12">
-        <button class="btn btn-outline-dark" id="btnReset">Reset <i class="fas fa-redo"></i></button>
-        <button class="btn btn-outline-dark" id="btnCheck">Check Answers <i
+        <button class="btn" id="btnReset">Reset <i class="fas fa-redo"></i></button>
+        <button class="btn " id="btnCheck">Check Answers <i
                 class="far fa-check-circle"></i></button>
-        <button class="btn btn-outline-dark" id="btnHint" data-toggle="tooltip"
+        <button class="btn" id="btnHint" data-toggle="tooltip"
             title="Add a few letters to each word">Hint <i class="far fa-smile-wink"></i></button>
-        <button class="btn btn-outline-dark" id="btnCreate">Create Your Own! <i
-                class="far fa-plus-square"></i></button>
     </div>
 </div>
 

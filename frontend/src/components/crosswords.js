@@ -2,6 +2,7 @@ import * as CONSTANTS from "./constants";
 import crossword from "./Crossword";
 import apiActions from  "../api/api-actions";
 import header from "./header";
+import cookie from "./cookies"
 
 export default{
     displayAllCrosswords,
@@ -16,7 +17,7 @@ export function displayAllCrosswords(crosswords){
     }
     return `
         <h1 id="allCrosswords">Choose a Crossword from the List Below: </h1>
-        <h4 id="addCrosswordTitle">Or <button id="addCrossword">Add Your Own</button></h4>
+        <h4 id="addCrosswordTitle"><button id="addCrossword">Add Your Own</button></h4>
         <ol>
             ${crosswords.map(crossword =>{
                 return `
@@ -55,7 +56,7 @@ export function SetupAddCrossword(){
         `
         <form class='addOwner'>
             <label><strong>Crossword Title: </strong></label>
-            <input type='text' id='crosswordTitle' placeholder='Enter a Title for Your Crossword'/>
+            <input type='text' id='crosswordTitle' placeholder='Crossword Title'/>
             <h3 id=addCrosswordClues">Crossword Questions: </h3> 
             <span> Write some questions. Of the ones you create, 25 will be danromly chosen for the </span>
             <div id="placeholders">
@@ -91,7 +92,7 @@ export function SetupAddCrossword(){
 
         const newCrossword = {
             Title: document.getElementById("crosswordTitle").value,
-            UserId: 1,
+            UserId: cookie.getCookie("userId"),
             crosswordQuestions : crosswordQs
         };
 
@@ -111,15 +112,16 @@ function SetupAddClueButton(){
     const addClueButton = document.getElementById("addClueButton");
     const placeholderDiv = document.getElementById("placeholders");
     addClueButton.addEventListener("click", function(){
+        let div = document.createElement("div");
+        div.classList.add("line");
         let placeholderTemplate = `
-        <div class="line">
          <input class="word" type="text" placeholder="Answer"/>
          <span class="lineNum"></span>
          <input class="clue" placeholder="Clue"/>
-        </div>
      `;
+     div.innerHTML = placeholderTemplate;
      //might need to update lineNum property
-     placeholderDiv.innerHTML += placeholderTemplate;
+     placeholderDiv.appendChild(div);
     });
 }
 
