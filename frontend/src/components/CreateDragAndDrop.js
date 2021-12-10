@@ -20,13 +20,16 @@ function SetupSubmitDragAndDrop(){
 
 function displayCreateDragAndDrop() {
     return `
+    <div id="dndcreatetitlearea">
     <h1>Create Drag and Drop Matching Game
     </h1>
+    <div>
     <label>Title: </label>
-        <input type="text" name="DnDtitleInput" id="DnDtitleInput">
+        <input type="text" name="DnDtitleInput" id="DnDtitleInput"> </div></br>
+        <div>
         <label>Subheading: </label>
-        <input type="text" name="DnDsubheadInput" id="DnDsubheadInput">
-
+        <input type="text" name="DnDsubheadInput" id="DnDsubheadInput"></div>
+    </div>
     
     <div class="CraftTable" id="DnDCraftTable">
         <div id="DnDPromptTextCreationArea">
@@ -34,13 +37,13 @@ function displayCreateDragAndDrop() {
         <textarea id="DnDAddTextBox" name="DnDAddTextBox" rows="10" cols="50"> Write your prompt text here... </textarea>
         </br>
         <button id="DnDSubmitText">Submit</button>
-
-         <div id="DnDTextInputDirections"></div>
+        </div>
+         <div id="DnDTextInputDirections">
             <h3>Directions</h3>
             <p>1. Enter complete text in the box. </p><p>
-            2. Put Word Bank terms inside curly brackets {}. <strong>Example:</strong> {Word Bank Item}</p><p>
-            3. You can make the box bigger or smaller by dragging the bottom right corner.</p><p>
-            4. Press Submit to see your new game below.</p>
+            2. Put Word Bank terms inside curly brackets { }. <strong>Example:</strong> {Word Bank Item}</p><p>
+            3. You can make the text box bigger or smaller by dragging the bottom right corner.</p><p>
+            4. Press Submit to see your new game.</p>
          </div>
     </div>
 
@@ -97,11 +100,6 @@ function formatDragAndDrop() {
     CompleteDragAndDropPuzzle = CONSTANTS.PromptTextDivStart.concat(NewPromptTextCode, CONSTANTS.Div, CONSTANTS.WordBankDivStart, WordBankString, CONSTANTS.Div);
     
     console.log("complete drag and drop puzzle code -------- " + CompleteDragAndDropPuzzle);
-
-    // NewPromptText = "";
-    // WordBankString = "";
-    // WordBankArray = [];
-    // NewPromptTextCode = "";
     
     const titleInput = document.getElementById("DnDtitleInput");
     const subheadInput = document.getElementById("DnDsubheadInput");
@@ -132,7 +130,7 @@ function displayNewDragAndDrop(dragandDrop) {
 <h1 id="dragAndDropTitle">${dragandDrop.title}
     </h1>
     <h4 id="dragAndDropSubheading">${dragandDrop.subheading}</h4>
-    <div class="container">
+    <div id="dndcontainer" class="container">
     </br>
       ${dragandDrop.promptText}
 

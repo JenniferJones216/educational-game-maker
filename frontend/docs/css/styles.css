@@ -92,8 +92,8 @@ button{
 .box {
     border-style: solid;
     display: inline-block;
-    width: 145px;
-    height: 35px;
+    min-width: 145px;
+    min-height: 35px;
     border-color: rgb(127, 140, 165);
     border-width: 3px;
     border-radius: 5px;
@@ -107,6 +107,13 @@ h3 {
     margin: 0px;
     padding: 10px;
 }
+
+#dndcontainer {
+    display: flex;
+    flex-direction: row;
+
+}
+
 #word-bank {
     display: flex;
     flex-direction: column;
@@ -119,21 +126,44 @@ h3 {
     background-color: rgb(234, 241, 239);
     justify-content: space-around;
     align-items: center;
-    align-content: space-around;
+    align-content: space-between;
+    color: black;
+    padding: 5px;
 }
 .item {
-    width: 140px;
-    height: 30px;
+    min-width: 140px;
+    min-height: 30px;
     background-color: rgb(217, 234, 235);
     border-style: solid;
     border-color: rgb(129, 194, 54);
     border-width: 3px;
     border-radius: 5px;
     text-align: center;
+    color: black;
+
+    
 }
-/* .hide {
-    display: none;
-} */
+
+#dndcreatetitlearea {
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+
+
+#DnDtitleInput, #DnDsubheadInput {
+  width: 80%;
+}
+
+#DnDCraftTable {
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+   flex-direction: row;
+}
+ 
 .wrong-answer {
     border: solid 3px rgb(58, 12, 12);
     background-color: rgb(100, 29, 29);
