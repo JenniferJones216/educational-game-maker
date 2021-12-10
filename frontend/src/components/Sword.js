@@ -1,6 +1,6 @@
 import apiActions from "../api/api-actions";
-
-
+import * as CONSTANTS from "../components/constants";
+import Users from "./Users";
 
 export default {
   displaySword,
@@ -9,27 +9,13 @@ export default {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function displaySword()
 { console.log("      =============displaySword==================   ");
-  
+ 
+
 return `
+
+
 <div>    
 <p>To Select Words Click On The Letters In Order</p>
 <div id="words">
@@ -46,7 +32,6 @@ function SwordFunctions(y)
 {  
   console.log("      =============SwordFunctions=========   "+y);
     
-  //function onClick(e) {
  
     SetupGame(y);
   
@@ -80,22 +65,6 @@ function SwordFunctions(y)
 
 
 
-  // //var x2 = "J, Q, V, N, R, G, N, T, U, I, V, L, A, O, S, A, X, P, S, C, W, P, R, I, D, M, E, I, I, T, K, P, I, T, I, E, T, R, H, K, Z, U, A, C, K, S, G, C, X, T, X, T, B, N, F, Z, Y, S, G, J, O, D, L, U, Y, U, H, A, H, N, A, F, E, F, C, A, N, V, A, S, E, D, O, C, R, P, L, A, Y, A, F, X, E, E, V, C, P, J, H, B";
-  // //var Keywords2= "CANVAS, CODE, FUN, FUNCTION, GAMES, JAVASCRIPT, KIDS, PLAY, SHARE, VARIABLE" ;                
-  // let arr;// = x2.split(', ');
-  // let words; //= Keywords2.split(', ');
-  // const keyword = document.getElementById("words");
-  // const container = document.getElementById("container");
-  // const found = document.getElementById("found");
-  // var key = "";
-  // var answer = [];
-  // var calck=0;
-  // var buff=[];
-  // var start;
-  // var step=0;
-
-
-
 
 
   function makeRows(rows, cols) {
@@ -109,26 +78,14 @@ function SwordFunctions(y)
         row++;
        }
       let cell = document.createElement("div");
-    //  let rowInput = document.createElement("input");
-    // let columnInput = document.createElement("input");
-    // rowInput.type = "hidden";
-    // columnInput.type = "hidden";
-    //  rowInput.value = row;
-    //  columnInput.value = col;
-    //  rowInput.name = "yValue";
-    //  columnInput.name = "xValue";
-      cell.innerText = arr[c];
+       cell.innerText = arr[c];
       cell.value=c;
       buff.forEach( (number)=>{  
-       //  colorTextcolor=randomColor();
-      // console.log(colorTextcolor);
-       if(cell.value==number)
+      if(cell.value==number)
   {    
   cell.style.color="green";
         }
           }     );
-     // cell.appendChild(rowInput);
-     // cell.appendChild(columnInput);
       container.appendChild(cell).className = "grid-item";
       keyword.innerText = words.join(", ");
       col++;
@@ -137,8 +94,7 @@ function SwordFunctions(y)
   
   container.addEventListener("click", function (e) {
     console.log(e.target.outerText + " ==========  " + e.button);
-    //e.target.style.color = "blue";
-   if ( key.length<2)
+    if ( key.length<2)
    {
     if (key=='')
    { start=e.target.value;
@@ -169,7 +125,6 @@ function SwordFunctions(y)
   }
     }
     console.log("----" + key + "--------"+calck+"----------"+e.target.value);
-    //item, index, arr1
     words.forEach(function(item, index, arr1) {
       if (key === item) {
         console.log("you found word  ");
@@ -205,17 +160,7 @@ function SwordFunctions(y)
   {keyword.innerText = words.join(", ");}
     })
   });
-  // function getRequest(location, callback) {
-  //   fetch(location)
-  //     .then(response => response.json())
-  //     .then(data => {
-  //         console.log(data);
-  //       callback(data);
-  //     })
-  //     .catch(err => console.log(err));}
-
-
- // window.addEventListener("click", onClick);
+ 
 }
 
 
@@ -229,11 +174,7 @@ console.log("      =============SwordGameCreates=========   ");
  
    
 
-  var x2 = "J, Q, V, N, R, G, N, T, U, I, V, L, A, O, S, A, X, P, S, C, W, P, R, I, D, M, E, I, I, T, K, P, I, T, I, E, T, R, H, K, Z, U, A, C, K, S, G, C, X, T, X, T, B, N, F, Z, Y, S, G, J, O, D, L, U, Y, U, H, A, H, N, A, F, E, F, C, A, N, V, A, S, E, D, O, C, R, P, L, A, Y, A, F, X, E, E, V, C, P, J, H, B";
-  var Keywords2= "CANVAS, CODE, FUN, FUNCTION, GAMES, JAVASCRIPT, KIDS, PLAY, SHARE, VARIABLE" ;                
-   let arr;// = x2.split(', ');
-   let words; //= Keywords2.split(', ');
-   const keyword = document.getElementById("words");
+    const keyword = document.getElementById("words");
  const container = document.getElementById("container");
    const found = document.getElementById("found");
    var key = "";
@@ -242,25 +183,70 @@ console.log("      =============SwordGameCreates=========   ");
   var buff=[];
    var start;
    var step=0;
+   var Keywords=[];
+  
+  var arr;
+  var words;
+  
+   
+   
+  
+  
+ 
+   
+   
+  
+    let txt= document.createElement("input");
+   let btn = document.createElement("button");
+   let play = document.createElement("button");
+   btn.innerHTML = "add word";
+   play.innerText="generate game"
+   keyword.appendChild(txt);
+   keyword.appendChild(btn);
+   keyword.appendChild(play);
+   
+  
+   btn.addEventListener("click", function()
+   {
+    Keywords.push(txt.value);
 
 
+    console.log(Keywords);
+  });
+
+  
+  
+   /*
+
+
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}
+
+
+
+   */
+   
+play.addEventListener("click", function(){
    SetupGame();
   
-  
+});
   
     function SetupGame(){
       console.log(">>>>>>>>>>>>>>>>>>>");
+     
+
+  //  Keywords= "CANVAS, CODE, FUN, FUNCTION, GAMES, JAVASCRIPT, KIDS, PLAY, SHARE, VARIABLE" ;                
     
-    var Keywords2= "CANVAS, CODE, FUN, FUNCTION, GAMES, JAVASCRIPT, KIDS, PLAY, SHARE, VARIABLE" ;                
-    
-   // words= Keywords2.split(', ');
-    //makeRows2(10, 10);
-    
-   // GenerateWordSearch(words);
-    arr=GenerateWordSearch(Keywords2.split(', '))[0];
-   words=GenerateWordSearch(Keywords2.split(', '))[1];
+
+   var x=GenerateWordSearch(Keywords);
+   arr=x[0];
+   words=x[1];
     makeRows(10, 10);
-    
     }
 
 
@@ -277,27 +263,15 @@ console.log("      =============SwordGameCreates=========   ");
         row++;
        }
       let cell = document.createElement("div");
-    //  let rowInput = document.createElement("input");
-    // let columnInput = document.createElement("input");
-    // rowInput.type = "hidden";
-    // columnInput.type = "hidden";
-    //  rowInput.value = row;
-    //  columnInput.value = col;
-    //  rowInput.name = "yValue";
-    //  columnInput.name = "xValue";
-      cell.innerText = arr[c];
+        cell.innerText = arr[c];
       cell.value=c;
       buff.forEach( (number)=>{  
-       //  colorTextcolor=randomColor();
-      // console.log(colorTextcolor);
        if(cell.value==number)
   {    
   cell.style.color="green";
         }
           }     );
-     // cell.appendChild(rowInput);
-     // cell.appendChild(columnInput);
-      container.appendChild(cell).className = "grid-item";
+       container.appendChild(cell).className = "grid-item";
       keyword.innerText = words.join(", ");
       col++;
     };
@@ -305,7 +279,6 @@ console.log("      =============SwordGameCreates=========   ");
   
   container.addEventListener("click", function (e) {
     console.log(e.target.outerText + " ==========  " + e.button);
-    //e.target.style.color = "blue";
    if ( key.length<2)
    {
     if (key=='')
@@ -373,16 +346,6 @@ console.log("      =============SwordGameCreates=========   ");
   {keyword.innerText = words.join(", ");}
     })
   });
-
-
-
-
-
-
-
-
-
-
 
 //////////////////////////////////////////////////////////////////////
   function GenerateWordSearch(words){
@@ -521,55 +484,6 @@ console.log("      =============SwordGameCreates=========   ");
                 }
                 //console.log(stringGrid);
                 break;
-           /*
-           
-                case "NESW":
-                attempts++;
-                y = randomNumber(10 - elementExplode.length + 1)
-                x = randomNumber(10 - elementExplode.length + 1)
-                for(letter in elementExplode){
-                    toChange.push(10*(y) + x + 9*parseInt(letter))
-                }
-                console.log(toChange);
-                toChange.forEach(element => {
-                    if(stringGrid[element].touched){
-                        possible = false;
-                    }
-                });
-                if(possible){
-                    for(letter in elementExplode){
-                        stringGrid[toChange[letter]].char = elementExplode[letter];
-                        stringGrid[toChange[letter]].touched = true;
-                        placed = true;
-                    }
-                }
-                console.log(stringGrid);
-                break;
-            case "SWNE":
-                attempts++;
-                elementExplode = elementExplode.reverse();
-                y = randomNumber(10 - elementExplode.length + 1);    
-                x = randomNumber(10 - elementExplode.length + 1);
-                for(letter in elementExplode){
-                    toChange.push(10*(y) + x + 9*parseInt(letter))
-                }
-                console.log(toChange);
-                toChange.forEach(element => {
-                    if(stringGrid[element].touched){
-                        possible = false;
-                    }
-                });
-                if(possible){
-                    for(letter in elementExplode){
-                        stringGrid[toChange[letter]].char = elementExplode[letter];
-                        stringGrid[toChange[letter]].touched = true;
-                        placed = true;
-                    }
-                }
-                console.log(stringGrid);
-                break;
-            
-            */
                 case "SENW":
                 attempts++;
                 elementExplode = elementExplode.reverse();
@@ -578,7 +492,7 @@ console.log("      =============SwordGameCreates=========   ");
                 for(letter in elementExplode){
                     toChange.push(10*(y + parseInt(letter)) + x + parseInt(letter))
                 }
-                //console.log(toChange);
+               
                 toChange.forEach(element => {
                     if(stringGrid[element].touched){
                         possible = false;
@@ -591,7 +505,7 @@ console.log("      =============SwordGameCreates=========   ");
                         placed = true;
                     }
                 }
-                //console.log(stringGrid);
+       
                 break;
         }
     }
