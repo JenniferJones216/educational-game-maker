@@ -55,7 +55,7 @@ function SwordFunctions(y)
   
   function SetupGame(x){
     console.log(">>>>>>>>>>>>>>>>>>>");
-     apiActions.getRequest(`https://localhost:44308/api/Wordsearch`, woogy => {
+     apiActions.getRequest(CONSTANTS.swordURL, woogy => {
         console.log(woogy[x-1].matrix);
   arr=(woogy[x-1].matrix).split(', ');
   words=  (woogy[x-1].keywords).split(', ');
