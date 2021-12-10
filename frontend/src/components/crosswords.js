@@ -1,7 +1,6 @@
 import * as CONSTANTS from "./constants";
 import crossword from "./Crossword";
 import apiActions from  "../api/api-actions";
-import header from "./header";
 import cookie from "./cookies"
 
 export default{

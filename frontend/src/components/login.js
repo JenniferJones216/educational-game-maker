@@ -1,8 +1,10 @@
 import * as CONSTANTS from "./constants"
 import apiActions from "../api/api-actions"
-import cookies from "./cookies";
-import main from '../js/main';
+import cookies from "./cookies"
+import main from '../js/main'
 import crossword from "./Crossword"
+import LoadDrag from "./LoadDrag"
+import dragFuncs from "./DragAndDrop"
 
 const url = CONSTANTS.userURL + "?u={0}&password={1}";
 
@@ -115,6 +117,15 @@ export async function displayProfile(){
             <button class="crossword" id="cw-${cw.id}">Play!</button>
         </div>`
     }).join('')}
+    <h3>Your Drag and Drops</h3>
+    ${user.dragandDrops.map(dnd => {
+         return `<div>
+            <span>
+            ${dnd.title}
+            </span>
+            <button class="dragAndDrop" id="dnd-${dnd.id}">Play!</button>
+        </div>`
+    }).join('')}
     <button id="logoutBtn">Logout</button>
 `;
 }
@@ -127,11 +138,21 @@ export function setupProfile(){
     });
 
     let cws = Array.from(document.getElementsByClassName("crossword"));
+    let dnds = Array.from(document.getElementsByClassName("dragAndDrop"));
+
     cws.forEach(cw => {
         cw.addEventListener("click", function(){
             let id = parseInt(cw.id.replace("cw-",""));
             CONSTANTS.appElement.innerHTML = crossword.displayCrossword(id);
             crossword.crosswordFunctions(id);
+        });
+    });
+    dnds.forEach(dnd => {
+        dnd.addEventListener("click", function(){
+            let id = parseInt(dnd.id.replace("dnd-",""));
+            CONSTANTS.appElement.innerHTML = LoadDrag.displayDragAndDrop(id);
+            console.log(id)
+            dragFuncs.SetUpDragFunctions(id);
         });
     });
 }

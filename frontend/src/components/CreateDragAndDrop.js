@@ -1,6 +1,8 @@
 import dragAndDrop from "../components/DragAndDrop";
 import * as CONSTANTS from "../components/constants";
 import apiActions from "../api/api-actions";
+import cookie from "./cookies"
+
 
 export default {
     formatDragAndDrop,
@@ -110,7 +112,7 @@ function formatDragAndDrop() {
     let requestBody = {
         Title: NewTitle,
         Subheading: NewSubhead,
-        UserId: 1,
+        UserId: cookie.getCookie("userId"),
         PromptText: CompleteDragAndDropPuzzle,
         WordBank: NewPromptText
     };

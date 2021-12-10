@@ -12,6 +12,9 @@ export default {
 }
 
 function displayAllDragAndDrops(dragandDrops) { 
+    if(dragandDrops.map == undefined){
+        dragandDrops.map = [];
+    }
     return `
          <button id="DnDCreatGameButton">Create Drag and Drop Game</button>
         <ol>
