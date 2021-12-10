@@ -196,6 +196,7 @@ console.log("      =============SwordGameCreates=========   ");
    
     
    
+<<<<<<< HEAD
   let gide=document.createElement("lable");
   let txt= document.createElement("input");
  let btn = document.createElement("button");
@@ -210,6 +211,34 @@ console.log("      =============SwordGameCreates=========   ");
  keyword.appendChild(btn);
  keyword.appendChild(play);
  
+=======
+  
+    let txt= document.createElement("input");
+   let btn = document.createElement("button");
+   let play = document.createElement("button");
+   btn.innerHTML = "add word";
+   play.innerText="generate game"
+   keyword.appendChild(txt);
+   keyword.appendChild(btn);
+   keyword.appendChild(play);
+   
+  
+   btn.addEventListener("click", function()
+   {
+    Keywords.push(txt.value);
+    txt.value = "";
+
+    console.log(Keywords);
+  });
+
+  
+  
+   /*
+
+
+
+<p id="demo"></p>
+>>>>>>> 91c6193c59056ee7b2777241d9c60c3edc0d4383
 
  btn.addEventListener("click", function()
  {

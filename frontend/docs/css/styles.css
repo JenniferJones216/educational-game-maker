@@ -53,6 +53,10 @@ button{
   font-size: 0.8rem;
 }
 
+.DnDTitle:hover{
+  cursor: pointer;
+}
+
 #dragAndDropTitle {
     display: flex;
     justify-content: space-around;

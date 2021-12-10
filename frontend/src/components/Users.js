@@ -17,7 +17,6 @@ export function DisplayUsers(data) {
         return `
         <div id="${user.id}">
           <h3>${user.username}</h3>
-          <p> ${user.name} </p> 
      <button class="playSword" id = "sw${user.id}"> Play Wordsearch </button> 
           </div>  
         `;
