@@ -86,7 +86,7 @@ namespace EducationalGameMaker.Controllers
 
         // DELETE: api/DragandDrops/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteDragandDrop(int id)
+        public async Task<ActionResult<IEnumerable<DragandDrop>>> DeleteDragandDrop(int id)
         {
             var dragandDrop = await _context.DragandDrops.FindAsync(id);
             if (dragandDrop == null)
@@ -97,7 +97,8 @@ namespace EducationalGameMaker.Controllers
             _context.DragandDrops.Remove(dragandDrop);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return await _context.DragandDrops.ToListAsync();
+
         }
 
         private bool DragandDropExists(int id)

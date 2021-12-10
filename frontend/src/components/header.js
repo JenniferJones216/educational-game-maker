@@ -1,11 +1,10 @@
 import * as CONSTANTS from "../components/constants";
-import dragAndDrop from "../components/DragAndDrop";
 import allCrosswords from "../components/crosswords";
-import loadDrag from "./LoadDrag";
 import apiActions from "../api/api-actions";
 import sword from "../components/Sword";
 import Home from "../components/Home";
 import Users from "./Users";
+import dragAndDrops from "./DragAndDrops";
 import Cookies from "./cookies"
 import Login from "./login"
 
@@ -83,31 +82,23 @@ function SetupHeaderEventListeners() {
             Login.setupProfile();
         });
     }
-    SetUpDragAndDropLink();
+    DisplayDragAndDrops();
     DisplayCrosswords();
     SetUpSwordLink();
     SetupUser();
-
-
-
 }
 
-// function SetUpDragAndDropLink() {
-//     const btnDrag = document.getElementById('navDrag');
-//     btnDrag.addEventListener("click", function () {
-//         CONSTANTS.appElement.innerHTML = dragAndDrop.displayDragAndDrop();
-//         dragAndDrop.SetUpDragFunctions();
-//     })
-// }
-
-function SetUpDragAndDropLink() {
+function DisplayDragAndDrops() {
     const btnDrag = document.getElementById('navDrag');
-    btnDrag.addEventListener("click", function (evt) {
-        apiActions.getSingleRequest(CONSTANTS.DragAndDropURL + "/", 1, data => {
-            CONSTANTS.appElement.innerHTML = loadDrag.displayDragon(data);
-            dragAndDrop.SetUpDragFunctions();
+    btnDrag.addEventListener("click", function () {
+        apiActions.getRequest(CONSTANTS.DragAndDropURL, data => {
+            CONSTANTS.appElement.innerHTML = dragAndDrops.displayAllDragAndDrops(data);  
+            dragAndDrops.setupCreateDragAndDrop();
+            dragAndDrops.SetupDragAndDropLinks();
+            dragAndDrops.SetUpDragAndDropDeleteBtn();
         });
         
+         //set up delete
     });
 }
 
@@ -122,7 +113,7 @@ function DisplayCrosswords() {
             allCrosswords.SetUpCrosswordDeleteBtn();
         })
     })
-    }
+}
 
 
 function SetUpSwordLink() {
