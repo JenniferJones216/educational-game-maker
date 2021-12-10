@@ -3,8 +3,8 @@ import apiActions from "../api/api-actions"
 import cookies from "./cookies"
 import main from '../js/main'
 import crossword from "./Crossword"
-import LoadDrag from "./LoadDrag"
-import dragFuncs from "./DragAndDrop"
+import loadDrag from "./LoadDrag"
+import dragAndDrop from "./DragAndDrop"
 
 const url = CONSTANTS.userURL + "?u={0}&password={1}";
 
@@ -150,8 +150,11 @@ export function setupProfile(){
     dnds.forEach(dnd => {
         dnd.addEventListener("click", function(){
             let id = parseInt(dnd.id.replace("dnd-",""));
-            CONSTANTS.appElement.innerHTML = LoadDrag.displayDragAndDrop(id);
-            dragFuncs.SetUpDragFunctions(id);
+            apiActions.getRequest(CONSTANTS.DragAndDropURL + "/" + id, data =>{
+                console.log(data);
+                CONSTANTS.appElement.innerHTML = loadDrag.displayDragAndDrop(data);
+                dragAndDrop.SetUpDragFunctions();
+            });
         });
     });
 }

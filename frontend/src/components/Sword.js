@@ -209,7 +209,7 @@ console.log("      =============SwordGameCreates=========   ");
    btn.addEventListener("click", function()
    {
     Keywords.push(txt.value);
-
+    txt.value = "";
 
     console.log(Keywords);
   });
