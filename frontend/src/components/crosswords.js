@@ -17,7 +17,7 @@ export function displayAllCrosswords(crosswords){
     }
     return `
         <h1 id="allCrosswords">Choose a Crossword from the List Below: </h1>
-        <h4 id="addCrosswordTitle">Or <button id="addCrossword">Add Your Own</button></h4>
+        <h4 id="addCrosswordTitle"><button id="addCrossword">Add Your Own</button></h4>
         <ol>
             ${crosswords.map(crossword =>{
                 return `
@@ -56,7 +56,7 @@ export function SetupAddCrossword(){
         `
         <form class='addOwner'>
             <label><strong>Crossword Title: </strong></label>
-            <input type='text' id='crosswordTitle' placeholder='Enter a Title for Your Crossword'/>
+            <input type='text' id='crosswordTitle' placeholder='Crossword Title'/>
             <h3 id=addCrosswordClues">Crossword Questions: </h3> 
             <span> Write some questions. Of the ones you create, 25 will be danromly chosen for the </span>
             <div id="placeholders">

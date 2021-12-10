@@ -104,13 +104,14 @@ export async function displayProfile(){
     .catch(err => console.log(err));
     console.log(user);
     return     `
-    <h1>${user.username}</h1>
-    <h2>${user.name}</h2>
+    <h1>Welcome ${user.name}!</h1>
+    <span>(aka: ${user.username})</span>
+    <h3>Your Crosswords</h3>
     ${user.crosswords.map(cw => {
         return `<div>
-            <h3>
+            <span>
             ${cw.title}
-            </h3>
+            </span>
             <button class="crossword" id="cw-${cw.id}">Play!</button>
         </div>`
     }).join('')}
