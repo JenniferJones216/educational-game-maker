@@ -114,6 +114,14 @@ h3 {
 
 }
 
+#drop-targets {
+  background-color: white;
+  text-align: left;
+  padding: 10px;
+  color: black;
+  border-radius: 10px;
+}
+
 #word-bank {
     display: flex;
     flex-direction: column;

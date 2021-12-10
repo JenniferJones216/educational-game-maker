@@ -12,8 +12,8 @@ export const crosswordAllClues = document.getElementById("crosswordAllClues");
 
 //drag and drop constants
 // HTML for game
-export const WordBankOpenA = '<div class="item" id="';
-export const WordBankOpenB = '" draggable="true">';
+export const WordBankOpenA = "<div class='item' id='";
+export const WordBankOpenB = "' draggable='true'>";
 export const WordBankClose = "</div>";
 export const PromptTextDivStart = "<div class='drop-targets' id='drop-targets'>";
 export const Div = "</div>";
