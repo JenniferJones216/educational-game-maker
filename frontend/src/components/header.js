@@ -50,7 +50,11 @@ function SetupUser(){
       apiActions.getRequest(CONSTANTS.userURL, data => {
        
         CONSTANTS.appElement.innerHTML = Users.DisplayUsers(data);
-        Users.SetupUserLinks();
+        Users.SetUpSwordStart();
+   
+   
+   
+   
     })}
     );   
 }
@@ -117,7 +121,8 @@ function DisplayCrosswords() {
 
 
 function SetUpSwordLink() {
-    const btnSword = document.getElementById('navSWord');
+
+const btnSword = document.getElementById('navSWord');
     btnSword.addEventListener("click", function () {
         CONSTANTS.appElement.innerHTML = sword.displaySword();
         sword.SwordGameCreate();
