@@ -8,7 +8,7 @@ namespace EducationalGameMaker.Models
     public class Wordsearch
     {
      public int Id { get; set; }
-
+        public string Title { get; set; }
         public int UserId { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }

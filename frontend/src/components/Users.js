@@ -17,15 +17,19 @@ export function DisplayUsers(data) {
         return `
         <div id="${user.id}">
           <h3>${user.username}</h3>
-          <p> ${user.name} </p>
-       </div>  
+          <p> ${user.name} </p> 
+     <button class="playSword" id = "sw${user.id}"> Play Wordsearch </button> 
+          </div>  
         `;
+      
     }).join('')}
     </div>`
 }
  
 export function SetupUserLinks(){
   //functionality for setting up and displaying each user's games
+ // SetUpSwordStart();
+
 }
 
 //might not need
