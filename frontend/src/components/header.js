@@ -51,7 +51,7 @@ function SetupUser(){
        
         CONSTANTS.appElement.innerHTML = Users.DisplayUsers(data);
         Users.SetUpSwordStart();
-   
+        Users.SetupUserLinks();
    
    
    
