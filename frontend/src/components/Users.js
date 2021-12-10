@@ -62,8 +62,17 @@ export function displayUserProfile(id){
           <button class="dragAndDrop" id="dnd-${dnd.id}">Play!</button>
       </div>`
   }).join('')}
-  <h3>Wordsearches</h3>
-  `;
+   <h3>Word search</h3>
+  ${data.wordsearchs.map(user => {
+      return `
+      <div id="${user.id}">
+        ${user.title}
+        <button class="playSword" id = "ws-${user.id}">User Games</button> 
+        </div>  
+      `;
+  }).join('')}
+  </div>`
+  ;
   setupUserProfileLinks();
 });
 }
@@ -112,7 +121,7 @@ export function SetUpSwordStart() {
    
     playSword.forEach((button) => {
       button.addEventListener("click", () => {
-        let currentId = parseInt(button.id.replace("sw", ""));
+        let currentId = parseInt(button.id.replace("ws-", ""));
         console.log(" Id for wordsearch    "+ currentId);
         CONSTANTS.appElement.innerHTML= sword.displaySword();
         sword.SwordFunctions(currentId);
