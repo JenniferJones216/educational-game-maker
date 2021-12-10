@@ -5,6 +5,8 @@ import main from '../js/main'
 import crossword from "./Crossword"
 import loadDrag from "./LoadDrag"
 import dragAndDrop from "./DragAndDrop"
+import sword from "./Sword";
+
 
 const url = CONSTANTS.userURL + "?u={0}&password={1}";
 
@@ -126,6 +128,7 @@ export async function displayProfile(){
             <button class="dragAndDrop" id="dnd-${dnd.id}">Play!</button>
         </div>`
     }).join('')}
+    <h3>Your Wordsearches</h3>
     <button id="logoutBtn">Logout</button>
 `;
 }

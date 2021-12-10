@@ -1,6 +1,7 @@
 import apiActions from "../api/api-actions";
 import * as CONSTANTS from "../components/constants";
 import Users from "./Users";
+import cookie from "./cookies"
 
 export default {
   displaySword,
@@ -10,8 +11,10 @@ export default {
 
 
 function displaySword()
-{ console.log("      =============displaySword==================   ");
- 
+{ 
+  
+  console.log("      =============displaySword==================   ");
+
 
 return `
 
@@ -245,7 +248,10 @@ play.addEventListener("click", function(){
   
     function SetupGame(){
       console.log(">>>>>>>>>>>>>>>>>>>");
-     
+      const newSword= {
+        UserId: cookie.getCookie("userId"),
+      }
+      
   
 
    var x=GenerateWordSearch(Keywords);
@@ -354,6 +360,7 @@ play.addEventListener("click", function(){
 
 //////////////////////////////////////////////////////////////////////
   function GenerateWordSearch(words){
+    
     let dirs = ["WE","EW","NS","SN","NWSE","SENW"]
     let templateString = randomString(100,'abcdefghijklmnopqrstuvwxyz');
     let stringGrid = [];

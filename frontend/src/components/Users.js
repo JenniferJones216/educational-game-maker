@@ -7,7 +7,6 @@ import dragAndDrop from "./DragAndDrop"
 
 export default {
     DisplayUsers,
-    SetUpSwordStart,
     SetupUserLinks,
     displayUserProfile,
     setupUserProfileLinks
@@ -21,7 +20,6 @@ export function DisplayUsers(data) {
         <div id="${user.id}">
           <h3>${user.username}</h3>
           <button class="userGamesBtn" id = "user-${user.id}">User Games</button> 
-          <button class="playSword" id = "sw${user.id}"> Play Wordsearch </button> 
           </div>  
         `;
     }).join('')}
@@ -33,22 +31,17 @@ let userGamesBtn = document.querySelectorAll('.userGamesBtn');
 userGamesBtn.forEach(btn =>{
   btn.addEventListener("click", function(){
     let currentId = parseInt(btn.id.replace("user-", ""));
-    console.log(currentId + "THIS IS ID");
     displayUserProfile(currentId);
 
 })
-
 })
-  //functionality for setting up and displaying each user's games
- // SetUpSwordStart();
-//  dispayUserProfile();
 }
 
 export function displayUserProfile(id){
+  if(sword.map == undefined){
+    sword.map = [];
+  }
   apiActions.getRequest(CONSTANTS.userURL + "/" + id, data =>{
-    console.log("data info " +data);
-    console.log(data.name, "  ", data.username, " ", data.crosswords);
-    
     CONSTANTS.appElement.innerHTML = `
   <h1>${data.username}'s Games</h1>
   <h3>Crosswords</h3>
@@ -69,6 +62,7 @@ export function displayUserProfile(id){
           <button class="dragAndDrop" id="dnd-${dnd.id}">Play!</button>
       </div>`
   }).join('')}
+  <h3>Wordsearches</h3>
   `;
   setupUserProfileLinks();
 });
@@ -78,9 +72,10 @@ export function setupUserProfileLinks(){
   
   let cws = Array.from(document.getElementsByClassName("crossword"));
   let dnds = Array.from(document.getElementsByClassName("dragAndDrop"));
+  let wss =  Array.from(document.getElementsByClassName("playSword"));
+
   cws.forEach(cw => {
     cw.addEventListener("click", function(){
-      console.log("crossword btn clicked!")
         let id = parseInt(cw.id.replace("cw-",""));
         CONSTANTS.appElement.innerHTML = crossword.displayCrossword(id);
         crossword.crosswordFunctions(id);
@@ -88,7 +83,6 @@ export function setupUserProfileLinks(){
 });
 dnds.forEach(dnd => {
     dnd.addEventListener("click", function(){
-      console.log("DND btn clicked!")
         let id = parseInt(dnd.id.replace("dnd-",""));
         apiActions.getRequest(CONSTANTS.DragAndDropURL + "/" + id, data =>{
             console.log(data);
@@ -96,6 +90,15 @@ dnds.forEach(dnd => {
             dragAndDrop.SetUpDragFunctions();
         });
     });
+    wss.forEach(ws => {
+      console.log(wss);
+      ws.addEventListener("click", function(){
+        console.log("WS btn clicked!")
+          let id = parseInt(ws.id.replace("ws-",""));
+              CONSTANTS.appElement.innerHTML = sword.displaySword();
+              sword.SwordFunctions(id);          
+            });
+      });
 });
 }
 
