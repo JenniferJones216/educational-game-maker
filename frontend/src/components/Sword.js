@@ -194,42 +194,32 @@ console.log("      =============SwordGameCreates=========   ");
   
  
    
+    
    
-  
-    let txt= document.createElement("input");
-   let btn = document.createElement("button");
-   let play = document.createElement("button");
-   btn.innerHTML = "add word";
-   play.innerText="generate game"
-   keyword.appendChild(txt);
-   keyword.appendChild(btn);
-   keyword.appendChild(play);
-   
-  
-   btn.addEventListener("click", function()
-   {
-    Keywords.push(txt.value);
+  let gide=document.createElement("lable");
+  let txt= document.createElement("input");
+ let btn = document.createElement("button");
+ let play = document.createElement("button");
+ btn.innerHTML = "add word";
+ play.innerText="generate game";
+
+ gide.innerHTML="</br><p>Type word click (add word) after you have some words click (generate game) to play</p></br>";
+
+ keyword.appendChild(gide);
+ keyword.appendChild(txt);
+ keyword.appendChild(btn);
+ keyword.appendChild(play);
+ 
+
+ btn.addEventListener("click", function()
+ {
+  Keywords.push(txt.value);
+txt.value='';
+
+  console.log(Keywords);
+});
 
 
-    console.log(Keywords);
-  });
-
-  
-  
-   /*
-
-
-
-<p id="demo"></p>
-
-<script>
-function myFunction() {
-  document.getElementById("demo").innerHTML = "Hello World";
-}
-
-
-
-   */
    
 play.addEventListener("click", function(){
    SetupGame();
@@ -239,9 +229,7 @@ play.addEventListener("click", function(){
     function SetupGame(){
       console.log(">>>>>>>>>>>>>>>>>>>");
      
-
-  //  Keywords= "CANVAS, CODE, FUN, FUNCTION, GAMES, JAVASCRIPT, KIDS, PLAY, SHARE, VARIABLE" ;                
-    
+  
 
    var x=GenerateWordSearch(Keywords);
    arr=x[0];
