@@ -23,6 +23,7 @@ function displayCreateDragAndDrop() {
     <div id="dndcreatetitlearea">
     <h1>Create Drag and Drop Matching Game
     </h1>
+    <p>** You must be logged in to your profile to create a new game **</p>
     <div>
     <label>Title: </label>
         <input type="text" name="DnDtitleInput" id="DnDtitleInput"> </div></br>
@@ -61,6 +62,7 @@ function formatDragAndDrop() {
     NewPromptTextCode = "<span class='promptText'>".concat(NewPromptText);
     let n = 1;
 
+    //replace curly brackets with html tags, separate wordbank terms
     while (n < 100) {
         let OpenPosition = NewPromptTextCode.search("{");
         let ClosePosition = NewPromptTextCode.search("}");
@@ -78,6 +80,7 @@ function formatDragAndDrop() {
             {n = 1000};
     }
 
+    //add in linebreak html tags
     let r = 1;
     while (r < 100) {
         let x = NewPromptTextCode.search(/\n/);
@@ -88,7 +91,7 @@ function formatDragAndDrop() {
         NewPromptTextCode = NewPromptTextCode.replace(/\n/i, "</br>")};
     }
 
-
+    //randomize wordbank terms
     NewPromptTextCode = NewPromptTextCode.concat("</span>");
     WordBankArray.sort(function(a, b){return 0.5 - Math.random()});
     console.log("prompt text code: " + NewPromptTextCode);
@@ -106,7 +109,7 @@ function formatDragAndDrop() {
     let NewTitle = titleInput.value
     let NewSubhead = subheadInput.value
     
-
+    //PromptText is the puzzle in html form. WordBank is the text the user entered
     let requestBody = {
         Title: NewTitle,
         Subheading: NewSubhead,
@@ -130,6 +133,7 @@ function displayNewDragAndDrop(dragandDrop) {
 <h1 id="dragAndDropTitle">${dragandDrop.title}
     </h1>
     <h4 id="dragAndDropSubheading">${dragandDrop.subheading}</h4>
+    <p>Click and drag the Word Bank terms to the spaces where they belong in the text.</p>
     <div id="dndcontainer" class="container">
     </br>
       ${dragandDrop.promptText}

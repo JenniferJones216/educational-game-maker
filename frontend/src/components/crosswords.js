@@ -56,7 +56,7 @@ export function SetupAddCrossword(){
             <label><strong>Crossword Title: </strong></label>
             <input type='text' id='crosswordTitle' placeholder='Crossword Title'/>
             <h3 id=addCrosswordClues">Crossword Questions: </h3> 
-            <span> Write some questions. Of the ones you create, 25 will be danromly chosen for the </span>
+            <span> Write a minimum of 10 answers and clues. Of the ones you create, 25 will be randomly chosen for the puzzle.</span></br><span>*You must be logged in to your profile to create a new game.*</span></br></br>
             <div id="placeholders">
                 <div class="line">
                     <input class="word" type="text" placeholder="Answer"/>
@@ -66,6 +66,7 @@ export function SetupAddCrossword(){
             </div>
             <button type="button" id="addClueButton">Add Clue</button>
             <button type="button" id='btnCreateCrossword'>Create Crossword</button>
+            
         </form>
         `;
         SetupAddClueButton();

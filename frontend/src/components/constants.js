@@ -2,16 +2,15 @@ export const appElement = document.getElementById('app');
 export const headerElement = document.getElementById('header');
 export const Footer = document.getElementById("footer");
 
-export const DragAndDropURL = 'https://localhost:44308/api/DragandDrops';
-export const CrosswordURL = 'https://localhost:44308/api/crosswords';
-export const userURL = 'https://localhost:44308/api/users';
-export const swordURL = 'https://localhost:44308/api/Wordsearch';
+export const DragAndDropURL = 'http://wccieducation-001-site6.itempurl.com/data/api/DragandDrops';
+export const CrosswordURL = 'http://wccieducation-001-site6.itempurl.com/data/api/crosswords';
+export const userURL = 'http://wccieducation-001-site6.itempurl.com/data/api/users';
+export const swordURL = 'http://wccieducation-001-site6.itempurl.com/data/api/Wordsearch';
 
 export const crosswordAllClues = document.getElementById("crosswordAllClues");
 
 
 //drag and drop constants
-// HTML for game
 export const WordBankOpenA = "<div class='item' id='";
 export const WordBankOpenB = "' draggable='true'>";
 export const WordBankClose = "</div>";

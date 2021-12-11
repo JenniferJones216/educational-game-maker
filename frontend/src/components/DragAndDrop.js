@@ -1,5 +1,3 @@
-import * as CONSTANTS from "../components/constants";
-
 export default {
     SetUpDragFunctions
 }
